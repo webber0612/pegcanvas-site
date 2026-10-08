@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#2c4a3d">
+  <link rel="icon" type="image/webp" href="/assets/pegcanvas-logo-160.webp">
+  <link rel="canonical" href="https://pegcanvas.com/{{locale}}/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://pegcanvas.com/zh/">
+  <link rel="alternate" hreflang="en" href="https://pegcanvas.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://pegcanvas.com/">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/language.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">{{skip}}</a>
+  <header><nav class="wrap" aria-label="{{navigation}}">
+    <a class="brand" href="/{{locale}}/" aria-label="{{home}}"><img class="brand-logo" src="/assets/pegcanvas-logo-160.webp" width="160" height="160" alt="PegCanvas"></a>
+    <div class="nav-links"><a href="#workflow">{{how}}</a><a href="#contact">{{contactNav}}</a><div class="language-links" role="group" aria-label="{{languageLabel}}"><a href="/zh/" lang="zh-Hant" hreflang="zh-Hant"{{zhCurrent}}>中文</a><a href="/en/" lang="en" hreflang="en"{{enCurrent}}>English</a></div></div>
+  </nav></header>
+  <main id="main" class="wrap">
+    <div class="hero">
+      <div><p class="eyebrow">{{heroEyebrow}}</p><h1>{{slogan}}</h1></div>
+      <div class="hero-copy"><p>{{heroCopy}}</p><a class="button" href="https://app.pegcanvas.com/">{{tryPreview}} <span aria-hidden="true">↗</span></a><p class="note">{{previewNote}}</p></div>
+    </div>
+    <figure class="product"><div class="frame"><img src="/assets/editor-{{locale}}.webp" width="1120" height="777" alt="{{prototypeAlt}}"></div><figcaption><span>{{prototypeCaption}}</span><span>{{prototypeFlow}}</span></figcaption></figure>
+
+    <section id="inspiration" class="inspiration" aria-labelledby="inspiration-title">
+      <div class="inspiration-intro">
+        <figure class="art-panel">
+          <img src="/assets/art-panel-concept-480.webp" srcset="/assets/art-panel-concept-480.webp 480w, /assets/art-panel-concept-960.webp 960w" sizes="(max-width:768px) 360px, 420px" width="1254" height="1254" loading="lazy" decoding="async" alt="{{portraitAlt}}">
+          <figcaption><span class="ai-label">{{aiLabel}}</span></figcaption>
+        </figure>
+        <div class="inspiration-copy">
+          <p class="eyebrow">{{inspirationEyebrow}}</p>
+          <h2 id="inspiration-title">{{inspirationTitle}}</h2>
+          <p>{{inspirationCopy}}</p>
+          <p>{{inspirationStart}}</p>
+          <a href="https://app.pegcanvas.com/">{{tryArtwork}} <span aria-hidden="true">↗</span></a>
+          <aside class="ai-disclosure" aria-label="{{disclosureLabel}}">
+            <p>{{disclosure}}</p>
+          </aside>
+        </div>
+      </div>
+      <div class="scene-gallery">
+        <figure class="scene">
+          <img src="/assets/entryway-concept-720.webp" srcset="/assets/entryway-concept-720.webp 720w, /assets/entryway-concept-1440.webp 1440w" sizes="(max-width:768px) calc(100vw - 32px), 576px" width="1448" height="1086" loading="lazy" decoding="async" alt="{{entrywayAlt}}">
+          <figcaption><div class="scene-caption-top"><h3>{{entrywayTitle}}</h3><span class="ai-label">{{aiLabel}}</span></div><p>{{entrywayCopy}}</p></figcaption>
+        </figure>
+        <figure class="scene">
+          <img class="living-room" src="/assets/living-room-concept-720.webp" srcset="/assets/living-room-concept-720.webp 720w, /assets/living-room-concept-1145.webp 1145w" sizes="(max-width:768px) calc(100vw - 32px), 576px" width="1145" height="1374" loading="lazy" decoding="async" alt="{{livingAlt}}">
+          <figcaption><div class="scene-caption-top"><h3>{{livingTitle}}</h3><span class="ai-label">{{aiLabel}}</span></div><p>{{livingCopy}}</p></figcaption>
+        </figure>
+        <figure class="scene">
+          <img src="/assets/gaming-desk-concept-720.webp" srcset="/assets/gaming-desk-concept-720.webp 720w, /assets/gaming-desk-concept-1440.webp 1440w" sizes="(max-width:768px) calc(100vw - 32px), 576px" width="1672" height="941" loading="lazy" decoding="async" alt="{{gamingAlt}}">
+          <figcaption><div class="scene-caption-top"><h3>{{gamingTitle}}</h3><span class="ai-label">{{aiLabel}}</span></div><p>{{gamingCopy}}</p></figcaption>
+        </figure>
+        <figure class="scene">
+          <img src="/assets/kids-room-concept-720.webp" srcset="/assets/kids-room-concept-720.webp 720w, /assets/kids-room-concept-1440.webp 1440w" sizes="(max-width:768px) calc(100vw - 32px), 576px" width="1448" height="1086" loading="lazy" decoding="async" alt="{{kidsAlt}}">
+          <figcaption><div class="scene-caption-top"><h3>{{kidsTitle}}</h3><span class="ai-label">{{aiLabel}}</span></div><p>{{kidsCopy}}</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow" aria-labelledby="workflow-title"><div><p class="eyebrow">{{workflowEyebrow}}</p><h2 id="workflow-title">{{workflowTitle}}</h2></div><ol class="steps">
+      <li><span class="number">01</span><div><h3>{{step1Title}}</h3><p>{{step1Copy}}</p></div></li>
+      <li><span class="number">02</span><div><h3>{{step2Title}}</h3><p>{{step2Copy}}</p></div></li>
+      <li><span class="number">03</span><div><h3>{{step3Title}}</h3><p>{{step3Copy}}</p></div></li>
+    </ol></section>
+    <section id="status" class="status" aria-labelledby="status-title"><div><p class="eyebrow">{{statusEyebrow}}</p><h2 id="status-title">{{statusTitle}}</h2></div><div class="status-copy"><span class="status-tag">{{statusTag}}</span><p>{{statusCopy}}</p><p>{{statusNext}}</p></div></section>
+    <section id="contact" class="contact" aria-labelledby="contact-title"><div><p class="eyebrow">{{contactEyebrow}}</p><h2 id="contact-title">{{contactTitle}}</h2><p>{{contactCopy}}</p></div><a href="mailto:hello@pegcanvas.com">hello@pegcanvas.com ↗</a></section>
+  </main>
+  <footer><div class="wrap"><p>© 2026 PegCanvas</p><p>{{ownership}}</p></div></footer>
+</body>
+</html>
