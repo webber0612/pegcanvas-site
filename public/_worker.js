@@ -1,8 +1,9 @@
 // Response headers for every page: no framing by other sites, and only the
-// sources this site actually uses (its own files and the Google Fonts typeface).
+// sources this site actually uses: its own files, the Google Fonts typeface and
+// Cloudflare Web Analytics, which Cloudflare adds to pages at the edge.
 const SECURITY_HEADERS = {
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'",
+    "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'",
   "X-Frame-Options": "DENY",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
