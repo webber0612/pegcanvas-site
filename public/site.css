@@ -230,3 +230,15 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
   *{transition:none !important;animation:none !important}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* legal page and footer links */
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.legal{padding:56px 0 24px}
+.legal-wrap{max-width:760px}
+.legal h1{margin:8px 0 12px;font-size:clamp(32px,5vw,48px);line-height:1.15}
+.legal h2{margin:56px 0 12px;font-size:28px;scroll-margin-top:96px}
+.legal h3{margin:28px 0 8px;font-size:19px}
+.legal p,.legal li{line-height:1.75}
+.legal ul{padding-left:22px;display:grid;gap:10px}
+.legal a{color:var(--cobalt)}
+.legal-toc{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-weight:700}

@@ -64,7 +64,7 @@
     "sampleAlt": "Sample design",
     "colorNote": "The strip shows the filament colors used at this color count. Nothing goes on the canvas until you confirm, and your original is kept.",
     "panelSize": "Panel size",
-    "sizeNote": "Anywhere from 100 to 340 mm to fit your printer. Add panels in any direction to build a full wall.",
+    "sizeNote": "From 120 to 240 mm to fit your printer. Add panels in any direction to build a full wall.",
     "fileMeta": "4 plates · multi-material · assembly guide included",
     "download": "Download",
     "plateWord": "Plate",
@@ -101,7 +101,7 @@
     "q2": "What 3D printer do I need?",
     "a2": "An FDM printer that supports multi-material printing, and a slicer that opens 3MF files. Match colors to the filament you already have.",
     "q3": "How big can it be?",
-    "a3": "Each panel can be 100–340 mm in 20 mm steps, sized to your print bed. Tile panels in any direction to cover a whole wall.",
+    "a3": "Each panel can be 40–240 mm in 20 mm steps; 120, 160, 200 and 240 mm keep the hole pattern identical on every panel. Tile panels in any direction to cover a whole wall.",
     "q4": "Will I have to pay again later?",
     "a4": "No. It is a one-time purchase with no subscription, and every future update to the web app is included, so you always have the latest version. If we ever shut down the online service, we will provide an offline version so you can keep using it.",
     "ctaTitle": "Launching on Kickstarter soon.",
@@ -110,7 +110,15 @@
     "orTry": "Or <a href=\"https://app.pegcanvas.com/\">try the editor</a> now.",
     "ownership": "A product of BABYGLIDER ONLINE STORE · Philippines",
     "contact": "Contact",
-    "mailSubject": "PegCanvas%20Kickstarter%20launch%20alert"
+    "mailSubject": "PegCanvas%20Kickstarter%20launch%20alert",
+    "legalTitle": "Privacy and copyright · PegCanvas",
+    "legalDescription": "What PegCanvas collects, where your images are processed, and who owns what.",
+    "legalHeading": "Privacy and copyright",
+    "legalUpdated": "Last updated 9 October 2026",
+    "privacyLink": "Privacy notice",
+    "copyrightLink": "Copyright and use",
+    "privacyBody": "<p>PegCanvas is operated by BABYGLIDER ONLINE STORE, Philippines. Questions or requests about this notice go to <a href=\"mailto:hello@pegcanvas.com\">hello@pegcanvas.com</a>.</p><h3>Your images and designs</h3><p>The editor at app.pegcanvas.com runs in your browser. The images you add, your designs and the print files you generate are processed on your own device and are not uploaded to us. Work in progress is kept in your browser's storage on that device so you can pick it up again; clearing your browser data removes it. Project files and print files are saved only where you choose to download them.</p><h3>What we receive</h3><ul><li><strong>Email you send us.</strong> If you write to us, for example to be told when the Kickstarter campaign opens, we keep your email address and message to reply and to send that notice. Ask at any time and we will delete them.</li><li><strong>Technical logs.</strong> Our pages are delivered by Cloudflare, which handles your IP address, browser type and the pages requested in order to serve the site and protect it from abuse.</li><li><strong>Fonts.</strong> pegcanvas.com loads its display typeface from Google Fonts, so your browser contacts Google's servers when you open the site.</li><li><strong>Language choice.</strong> Your language preference is stored in your browser, not on our servers.</li></ul><p>We do not run advertising or behavioural tracking, we do not use tracking cookies, and we do not sell personal information.</p><h3>Accounts</h3><p>The current preview needs no account. The full release will offer Google sign-in; before that is switched on, this notice will be updated to describe exactly what is received from Google and why.</p><h3>Your choices</h3><p>You can ask us what we hold about you, or to correct or delete it, by writing to the address above. If this notice changes, the new version is posted here with a new date.</p>",
+    "copyrightBody": "<p>© 2026 PegCanvas, BABYGLIDER ONLINE STORE. All rights reserved.</p><h3>What is ours</h3><p>The PegCanvas software, this website, its text and design, and the PegCanvas name and logo belong to us. PegCanvas™ is used as our brand. You may not copy or redistribute the software or the site's content, or use the name or logo in a way that suggests we made or endorse something we did not, without written permission.</p><h3>What is yours</h3><p>You keep every right you have in the images you bring to PegCanvas and in the designs you make with it. We claim no ownership of them and never receive them. You are responsible for having the right to use any image, character, logo or brand you turn into a panel. How you may use the print files PegCanvas generates, including commercially, depends on the plan described on the pricing section of this site.</p><h3>Illustrations on this site</h3><p>Room scenes marked as AI concepts are illustrations, not photographs of printed products, and do not show supported accessories or shipped features.</p><h3>Other names</h3><p>Names of printers, slicers and other products mentioned in PegCanvas belong to their owners and appear only to describe compatibility. PegCanvas is not affiliated with, sponsored by or endorsed by them.</p><h3>Open-source software</h3><p>The editor includes open-source components under their own licences, listed in the <a href=\"https://app.pegcanvas.com/THIRD_PARTY_NOTICES.txt\">third-party notices</a>.</p><h3>Printed panels</h3><p>PegCanvas produces files for you to print. Printed panels and hooks are for light loads only: do not hang fragile or valuable items, or anything that would be dangerous if it fell. Print quality, mounting and load are your responsibility, and the software is provided as is.</p><h3>Reporting a concern</h3><p>If you believe something on this site infringes your rights, write to <a href=\"mailto:hello@pegcanvas.com\">hello@pegcanvas.com</a> with the details and we will look into it.</p>"
   },
   "zh": {
     "locale": "zh",
@@ -177,7 +185,7 @@
     "sampleAlt": "範例圖案",
     "colorNote": "色條是這個色數會用到的耗材顏色。確認之後才放上畫布，原圖保留。",
     "panelSize": "單板尺寸",
-    "sizeNote": "100–340 mm，依你的印表機大小選擇；四個方向都能加板，拼成整面牆。",
+    "sizeNote": "120–240 mm，依你的印表機大小選擇；四個方向都能加板，拼成整面牆。",
     "fileMeta": "4 盤 · 多材料 · 組裝資訊已內嵌",
     "download": "下載",
     "plateWord": "盤",
@@ -214,7 +222,7 @@
     "q2": "我需要什麼樣的 3D 印表機？",
     "a2": "支援多材料列印的 FDM 印表機，以及能開啟 3MF 的切片軟體。耗材顏色可以照你手邊有的來配。",
     "q3": "可以做多大？",
-    "a3": "單塊板可在 100–340 mm 之間以 20 mm 為單位調整，依你的印表機成型尺寸選擇，再往四個方向拼接成一整面牆。",
+    "a3": "單塊板可在 40–240 mm 之間以 20 mm 為單位調整；選 120、160、200、240 mm 時每片板的孔位完全相同。再往四個方向拼接成一整面牆。",
     "q4": "買斷之後還要付錢嗎？",
     "a4": "不用。一次買斷、沒有訂閱，網頁版之後的更新都包含在內，你永遠用的是最新版。若日後停止線上服務，我們會提供離線版本，讓你繼續使用。",
     "ctaTitle": "眾籌即將開跑。",
@@ -223,6 +231,14 @@
     "orTry": "或先 <a href=\"https://app.pegcanvas.com/\">試用編輯器</a>。",
     "ownership": "由菲律賓 BABYGLIDER ONLINE STORE 開發",
     "contact": "聯絡我們",
-    "mailSubject": "PegCanvas%20%E7%9C%BE%E7%B1%8C%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98"
+    "mailSubject": "PegCanvas%20%E7%9C%BE%E7%B1%8C%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98",
+    "legalTitle": "隱私權與版權聲明 · PegCanvas",
+    "legalDescription": "PegCanvas 收集哪些資料、你的圖片在哪裡處理，以及各項內容的權利歸屬。",
+    "legalHeading": "隱私權與版權聲明",
+    "legalUpdated": "最後更新：2026 年 10 月 9 日",
+    "privacyLink": "隱私權聲明",
+    "copyrightLink": "版權與使用聲明",
+    "privacyBody": "<p>PegCanvas 由位於菲律賓的 BABYGLIDER ONLINE STORE 營運。對本聲明有任何問題或請求，請來信 <a href=\"mailto:hello@pegcanvas.com\">hello@pegcanvas.com</a>。</p><h3>你的圖片與設計</h3><p>app.pegcanvas.com 的編輯器在你的瀏覽器裡執行。你加入的圖片、你的設計，以及生成的列印檔，都在你自己的裝置上處理，不會上傳給我們。進行中的作品會保存在該裝置的瀏覽器儲存空間，方便你下次繼續；清除瀏覽器資料就會移除。作品檔與列印檔只會存到你選擇下載的位置。</p><h3>我們會收到的資料</h3><ul><li><strong>你寄給我們的信。</strong>如果你來信，例如登記眾籌開跑通知，我們會保留你的電子郵件地址與信件內容，用來回覆和寄送該通知。你隨時可以要求我們刪除。</li><li><strong>技術紀錄。</strong>網站由 Cloudflare 提供服務，為了傳送網頁與防止濫用，Cloudflare 會處理你的 IP 位址、瀏覽器類型與請求的頁面。</li><li><strong>字型。</strong>pegcanvas.com 的標題字型從 Google Fonts 載入，所以開啟網站時你的瀏覽器會連到 Google 的伺服器。</li><li><strong>語言選擇。</strong>你選擇的語言存在你的瀏覽器裡，不在我們的伺服器上。</li></ul><p>我們不投放廣告、不做行為追蹤、不使用追蹤用 Cookie，也不販售個人資料。</p><h3>帳號</h3><p>目前的試用版不需要帳號。正式版將提供 Google 登入；在啟用之前，本聲明會先更新，說明從 Google 取得哪些資料以及用途。</p><h3>你的選擇</h3><p>你可以來信詢問我們保有哪些關於你的資料，或要求更正、刪除。本聲明若有變更，新版本會公布在這裡並更新日期。</p>",
+    "copyrightBody": "<p>© 2026 PegCanvas，BABYGLIDER ONLINE STORE。版權所有。</p><h3>屬於我們的</h3><p>PegCanvas 軟體、本網站及其文字與設計，以及 PegCanvas 名稱與標誌，均屬於我們。PegCanvas™ 為我們使用的品牌。未經書面同意，請勿複製或散布本軟體或網站內容，也請勿以會讓人誤以為由我們製作或背書的方式使用本名稱或標誌。</p><h3>屬於你的</h3><p>你帶進 PegCanvas 的圖片，以及你用它完成的設計，權利都仍然是你的。我們不主張任何所有權，也不會收到這些內容。把任何圖片、角色、標誌或品牌做成板件之前，請自行確認你有權使用。PegCanvas 生成的列印檔可以如何使用（包含商業用途），依本網站定價區所列的方案而定。</p><h3>本網站的示意圖</h3><p>標示為 AI 概念圖的空間情境是示意，不是實際列印成品的照片，也不代表已支援的配件或已提供的功能。</p><h3>其他名稱</h3><p>PegCanvas 中提到的印表機、切片軟體及其他產品名稱，屬於各自的權利人，僅用來說明相容性。PegCanvas 與這些廠商沒有從屬、贊助或背書關係。</p><h3>開放原始碼軟體</h3><p>編輯器包含依各自授權條款使用的開放原始碼元件，清單見<a href=\"https://app.pegcanvas.com/THIRD_PARTY_NOTICES.txt\">第三方授權通知</a>。</p><h3>列印成品</h3><p>PegCanvas 提供的是讓你自行列印的檔案。3D 列印的板件與掛勾屬於輕負載，請勿吊掛易碎、貴重或掉落會造成危險的物品。列印品質、安裝與承重由你自行負責，本軟體以現況提供。</p><h3>權利疑慮通報</h3><p>如果你認為本網站有內容侵害你的權利，請來信 <a href=\"mailto:hello@pegcanvas.com\">hello@pegcanvas.com</a> 說明，我們會處理。</p>"
   }
 }

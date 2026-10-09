@@ -61,14 +61,14 @@
   pills.forEach((p) => p.addEventListener('click', () => paint(Number(p.dataset.colors))));
   paint(8);
 
-  // Panel size demo: 100-340 mm.
+  // Panel size demo: 120-240 mm.
   const range = document.getElementById('panel-size');
   const box = document.querySelector('[data-sizebox]');
   const labels = document.querySelectorAll('[data-size]');
   const size = () => {
     const v = Number(range.value);
     labels.forEach((l) => { l.textContent = v; });
-    if (box) box.style.width = `${(v / 340) * 88}%`;
+    if (box) box.style.width = `${(v / 240) * 88}%`;
   };
   if (range) { range.addEventListener('input', size); size(); }
 })();
