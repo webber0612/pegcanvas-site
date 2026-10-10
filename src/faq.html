@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{legalTitle}}</title>
-  <meta name="description" content="{{legalDescription}}">
+  <title>{{faqPageTitle}}</title>
+  <meta name="description" content="{{faqPageDescription}}">
   <meta name="theme-color" content="#13213F">
   <link rel="icon" type="image/webp" href="/assets/pegcanvas-logo-160.webp">
-  <link rel="canonical" href="https://pegcanvas.com/{{locale}}/legal/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://pegcanvas.com/zh/legal/">
-  <link rel="alternate" hreflang="en" href="https://pegcanvas.com/en/legal/">
+  <link rel="canonical" href="https://pegcanvas.com/{{locale}}/faq/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://pegcanvas.com/zh/faq/">
+  <link rel="alternate" hreflang="en" href="https://pegcanvas.com/en/faq/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;display=swap">
@@ -26,29 +26,19 @@
         <span>Peg<span class="brand-accent">Canvas</span></span>
       </a>
       <div class="nav-links">
-        <span class="language-links" role="group" aria-label="{{languageLabel}}"><a class="navlink" href="/zh/legal/" lang="zh-Hant" hreflang="zh-Hant"{{zhCurrent}}>中文</a><a class="navlink" href="/en/legal/" lang="en" hreflang="en"{{enCurrent}}>EN</a></span>
+        <span class="language-links" role="group" aria-label="{{languageLabel}}"><a class="navlink" href="/zh/faq/" lang="zh-Hant" hreflang="zh-Hant"{{zhCurrent}}>中文</a><a class="navlink" href="/en/faq/" lang="en" hreflang="en"{{enCurrent}}>EN</a></span>
         <a class="btn btn-primary btn-sm" href="https://app.pegcanvas.com/">{{startDesign}}</a>
       </div>
     </nav>
   </header>
 
-  <main id="main" class="legal">
+  <main id="main" class="legal faq-page">
     <div class="wrap legal-wrap">
-      <p class="eyebrow">LEGAL</p>
-      <h1>{{legalHeading}}</h1>
-      <p class="small">{{legalUpdated}}</p>
-      <nav class="legal-toc" aria-label="{{legalHeading}}">
-        <a href="#privacy">{{privacyLink}}</a>
-        <a href="#copyright">{{copyrightLink}}</a>
-      </nav>
-      <section id="privacy" aria-labelledby="privacy-title">
-        <h2 id="privacy-title">{{privacyLink}}</h2>
-        {{privacyBody}}
-      </section>
-      <section id="copyright" aria-labelledby="copyright-title">
-        <h2 id="copyright-title">{{copyrightLink}}</h2>
-        {{copyrightBody}}
-      </section>
+      <p class="eyebrow">FAQ</p>
+      <h1>{{faqHeading}}</h1>
+      <p class="small">{{faqIntro}}</p>
+      <nav class="legal-toc" aria-label="{{faqHeading}}">{{faqToc}}</nav>
+      {{faqBody}}
     </div>
   </main>
 

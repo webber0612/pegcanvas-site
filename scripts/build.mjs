@@ -4,6 +4,7 @@ const root = new URL('../', import.meta.url);
 const pages = [
   ['src/page.html', ''],
   ['src/legal.html', 'legal/'],
+  ['src/faq.html', 'faq/'],
 ];
 const copy = JSON.parse(await readFile(new URL('src/copy.json', root), 'utf8'));
 for (const [source, folder] of pages) {

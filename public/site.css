@@ -242,3 +242,8 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .legal ul{padding-left:22px;display:grid;gap:10px}
 .legal a{color:var(--cobalt)}
 .legal-toc{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-weight:700}
+
+/* faq page */
+.faq-page .faq-list{margin-top:8px}
+.faq-page .faq-list p{color:var(--muted)}
+.faq-more{font-weight:700;color:var(--cobalt)}
