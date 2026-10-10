@@ -261,3 +261,16 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .notify-status{margin:0;font-size:13px;color:rgba(247,242,232,.7)}
 .notify-form[data-state="done"] .notify-status{color:var(--mustard);font-weight:700}
 .notify-form[data-state="error"] .notify-status{color:#ffb4a3}
+
+/* preview on your wall */
+.wall-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.wall-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.wall-copy h2{font-size:clamp(30px,3.6vw,44px)}
+.wall-body{font-size:18px;line-height:1.7;color:var(--muted)}
+.wall-copy .checks{flex-direction:column;gap:10px;font-size:15px}
+.wall-show{display:flex;flex-direction:column;gap:14px;align-items:center}
+.wall-tabs{display:flex;gap:8px}
+.pill[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.wall-frame{width:100%;max-width:560px;border-radius:20px;overflow:hidden;box-shadow:0 18px 44px rgba(19,33,63,.2)}
+.wall-frame img{display:block;width:100%;height:auto}
+@media (max-width:860px){.wall-grid{grid-template-columns:1fr;gap:32px}}

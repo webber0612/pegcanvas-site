@@ -198,6 +198,37 @@
       </div>
     </section>
 
+    <section class="section" id="wall" aria-labelledby="wall-title">
+      <div class="wrap wall-grid">
+        <div class="wall-copy">
+          <p class="eyebrow">{{wallEyebrow}}</p>
+          <h2 id="wall-title">{{wallTitle}}</h2>
+          <p class="wall-body">{{wallBody}}</p>
+          <ul class="checks">
+            <li>{{wallCheck1}}</li>
+            <li>{{wallCheck2}}</li>
+            <li>{{wallCheck3}}</li>
+          </ul>
+          <a class="btn btn-primary" href="https://app.pegcanvas.com/">{{startDesign}}</a>
+        </div>
+        <div class="wall-show">
+          <div class="wall-tabs" role="tablist" aria-label="{{wallTabs}}">
+            <button type="button" role="tab" id="tab-wall-a" aria-controls="wall-a" aria-selected="true" class="pill">{{wallTabA}}</button>
+            <button type="button" role="tab" id="tab-wall-b" aria-controls="wall-b" aria-selected="false" class="pill" tabindex="-1">{{wallTabB}}</button>
+          </div>
+          <div class="wall-frame">
+            <div role="tabpanel" id="wall-a" aria-labelledby="tab-wall-a">
+              <img src="/assets/wall-preview-pop.webp" width="671" height="686" loading="lazy" alt="{{wallAltA}}">
+            </div>
+            <div role="tabpanel" id="wall-b" aria-labelledby="tab-wall-b" hidden>
+              <img src="/assets/wall-preview-wave.webp" width="671" height="686" loading="lazy" alt="{{wallAltB}}">
+            </div>
+          </div>
+          <p class="small">{{wallCaption}}</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-tail" id="pricing" aria-labelledby="pricing-title">
       <div class="wrap stack">
         <div class="section-head">

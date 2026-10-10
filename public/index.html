@@ -198,6 +198,37 @@
       </div>
     </section>
 
+    <section class="section" id="wall" aria-labelledby="wall-title">
+      <div class="wrap wall-grid">
+        <div class="wall-copy">
+          <p class="eyebrow">PREVIEW ON YOUR WALL</p>
+          <h2 id="wall-title">See it on your wall before you print.</h2>
+          <p class="wall-body">Take a photo of your wall and mark something whose length you know. Your design appears on it at true scale. Line up a few designs, switch between them in a click, and find the one that belongs on that wall.</p>
+          <ul class="checks">
+            <li>True scale, so size is obvious</li>
+            <li>Compare designs side by side</li>
+            <li>The photo stays in your browser and is never printed</li>
+          </ul>
+          <a class="btn btn-primary" href="https://app.pegcanvas.com/">Start designing</a>
+        </div>
+        <div class="wall-show">
+          <div class="wall-tabs" role="tablist" aria-label="One wall, two designs">
+            <button type="button" role="tab" id="tab-wall-a" aria-controls="wall-a" aria-selected="true" class="pill">Design A</button>
+            <button type="button" role="tab" id="tab-wall-b" aria-controls="wall-b" aria-selected="false" class="pill" tabindex="-1">Design B</button>
+          </div>
+          <div class="wall-frame">
+            <div role="tabpanel" id="wall-a" aria-labelledby="tab-wall-a">
+              <img src="/assets/wall-preview-pop.webp" width="671" height="686" loading="lazy" alt="Editor view: a 12-panel pop-art portrait pegboard design shown at true scale over a photo of a white wall">
+            </div>
+            <div role="tabpanel" id="wall-b" aria-labelledby="tab-wall-b" hidden>
+              <img src="/assets/wall-preview-wave.webp" width="671" height="686" loading="lazy" alt="Editor view: a 12-panel great-wave pegboard design over the same photo of a white wall">
+            </div>
+          </div>
+          <p class="small">From the editor · 700 × 600 mm, 12 panels</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-tail" id="pricing" aria-labelledby="pricing-title">
       <div class="wrap stack">
         <div class="section-head">

@@ -135,7 +135,19 @@
     "notifyFail": "That did not go through. Try again, or email hello@pegcanvas.com.",
     "notifyConsent": "One email when paid plans open, and nothing else.",
     "panelWidth": "Width",
-    "panelHeight": "Height"
+    "panelHeight": "Height",
+    "wallEyebrow": "PREVIEW ON YOUR WALL",
+    "wallTitle": "See it on your wall before you print.",
+    "wallBody": "Take a photo of your wall and mark something whose length you know. Your design appears on it at true scale. Line up a few designs, switch between them in a click, and find the one that belongs on that wall.",
+    "wallCheck1": "True scale, so size is obvious",
+    "wallCheck2": "Compare designs side by side",
+    "wallCheck3": "The photo stays in your browser and is never printed",
+    "wallTabs": "One wall, two designs",
+    "wallTabA": "Design A",
+    "wallTabB": "Design B",
+    "wallAltA": "Editor view: a 12-panel pop-art portrait pegboard design shown at true scale over a photo of a white wall",
+    "wallAltB": "Editor view: a 12-panel great-wave pegboard design over the same photo of a white wall",
+    "wallCaption": "From the editor · 700 × 600 mm, 12 panels"
   },
   "zh": {
     "locale": "zh",
@@ -273,6 +285,18 @@
     "notifyFail": "沒有登記成功，請再試一次，或寫信到 hello@pegcanvas.com。",
     "notifyConsent": "只在付費方案開放時通知一次，不會寄其他信。",
     "panelWidth": "寬",
-    "panelHeight": "高"
+    "panelHeight": "高",
+    "wallEyebrow": "PREVIEW ON YOUR WALL",
+    "wallTitle": "印之前，先掛上你的牆看看。",
+    "wallBody": "拍一張牆面的照片，標出一段你知道長度的東西，作品就會以真實比例出現在你的牆上。多準備幾個設計，一鍵切換，找出最適合這面牆的那一個。",
+    "wallCheck1": "真實比例，大小一看就知道",
+    "wallCheck2": "幾個設計輪流比較",
+    "wallCheck3": "照片只留在你的瀏覽器，不會列印",
+    "wallTabs": "同一面牆，兩個設計",
+    "wallTabA": "設計 A",
+    "wallTabB": "設計 B",
+    "wallAltA": "編輯器畫面：普普風人像的 12 片洞洞板設計，以真實比例疊在一面白牆的照片上",
+    "wallAltB": "編輯器畫面：浮世繪海浪的 12 片洞洞板設計，疊在同一面白牆的照片上",
+    "wallCaption": "編輯器實際畫面 · 700 × 600 mm，12 片板"
   }
 }
