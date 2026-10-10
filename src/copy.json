@@ -62,7 +62,7 @@
     "colorPreview": "Color preview",
     "colorWord": " colors",
     "sampleAlt": "Sample design",
-    "colorNote": "The strip shows the filament colors used at this color count. Nothing goes on the canvas until you confirm.",
+    "colorNote": "The strip shows the filament colors used at this color count. Nothing goes on the canvas until you confirm. The editor suggests a count for your image, and you can set your own.",
     "panelSize": "Panel size",
     "sizeNote": "Set width and height separately, each from 120 to 240 mm, to fit your printer. Add panels in any direction to build a full wall.",
     "fileMeta": "4 plates · multi-material · assembly guide included",
@@ -161,7 +161,8 @@
     "betaStep3Body": "Open “Contact support” on this site and say where you got stuck, what was unclear, what you wish it did, or report a problem. A screenshot or a photo of the print helps.",
     "betaRules": "One per person; whether to adopt a suggestion is our decision. We tell you by the email you leave, and the plan is added to the Google account you use in the editor. We may freely use what you suggest.",
     "betaCta": "Start designing",
-    "betaFeedback": "Give feedback"
+    "betaFeedback": "Give feedback",
+    "colorMore": "or any count, 1–64"
   },
   "zh": {
     "locale": "zh",
@@ -226,7 +227,7 @@
     "colorPreview": "分色預覽",
     "colorWord": " 色",
     "sampleAlt": "範例圖案",
-    "colorNote": "色條是這個色數會用到的耗材顏色。確認之後才放上畫布。",
+    "colorNote": "色條是這個色數會用到的耗材顏色。確認之後才放上畫布。 編輯器會依你的圖建議色數，也可以自己決定。",
     "panelSize": "單板尺寸",
     "sizeNote": "寬和高可以分開調整，各 120–240 mm，依你的印表機大小選擇；四個方向都能加板，拼成整面牆。",
     "fileMeta": "4 盤 · 多材料 · 組裝資訊已內嵌",
@@ -325,6 +326,7 @@
     "betaStep3Body": "按網頁上的「聯絡客服」，寫下哪裡卡住、哪裡看不懂、希望有什麼功能，或回報問題。附上截圖或成品照更好。",
     "betaRules": "每人一份；是否採納由我們決定。開通時會用你留的電子郵件通知，方案會加到你登入編輯器用的 Google 帳號。你提出的意見我們可以自由採用。",
     "betaCta": "開始設計",
-    "betaFeedback": "給我們意見"
+    "betaFeedback": "給我們意見",
+    "colorMore": "或自訂 1–64 色"
   }
 }
