@@ -25,6 +25,8 @@
 <body>
   <a class="skip" href="#main">{{skip}}</a>
 
+  <p class="beta-bar"><span>{{betaBar}}</span> <a href="#beta">{{betaBarLink}} →</a></p>
+
   <header class="topbar">
     <nav class="wrap nav" aria-label="{{navigation}}">
       <a class="brand" href="/{{locale}}/" aria-label="{{home}}">
@@ -46,7 +48,7 @@
     <section class="hero peg-bg" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="badge"><span>{{newTag}}</span>{{heroBadge}}</p>
+          <a class="badge" href="#beta"><span>{{newTag}}</span>{{heroBadge}}</a>
           <h1>{{heroH1}}</h1>
           <p class="lead">{{heroCopy}}</p>
           <div class="actions">
@@ -78,6 +80,26 @@
         <span>PNG · JPEG · SVG</span><i>●</i><span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
       </div>
     </div>
+
+    <section class="section beta" id="beta" aria-labelledby="beta-title">
+      <div class="wrap beta-card">
+        <div class="beta-head">
+          <p class="eyebrow">{{betaEyebrow}}</p>
+          <h2 id="beta-title">{{betaTitle}}</h2>
+          <p class="beta-body">{{betaBody}}</p>
+        </div>
+        <ol class="beta-steps">
+          <li><span class="num">1</span><div><strong>{{betaStep1Title}}</strong><p>{{betaStep1Body}}</p></div></li>
+          <li><span class="num">2</span><div><strong>{{betaStep2Title}}</strong><p>{{betaStep2Body}}</p></div></li>
+          <li><span class="num">3</span><div><strong>{{betaStep3Title}}</strong><p>{{betaStep3Body}}</p></div></li>
+        </ol>
+        <div class="beta-actions">
+          <a class="btn btn-primary" href="https://app.pegcanvas.com/">{{betaCta}}</a>
+          <a class="btn btn-ghost" href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{betaFeedback}}</a>
+        </div>
+        <p class="small">{{betaRules}}</p>
+      </div>
+    </section>
 
     <section class="section" id="scenes" aria-labelledby="scenes-title">
       <div class="wrap stack">
