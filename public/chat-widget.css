@@ -1,0 +1,224 @@
+/* PegCanvas support chat bubble. A separate file because the marketing site's
+   content policy does not allow styles written from script. */
+.pc-chat {
+  font:
+    14px/1.5 system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Noto Sans TC",
+    sans-serif;
+  color: #13213f;
+}
+.pc-chat * {
+  box-sizing: border-box;
+}
+/* The launcher floats at the middle of the right edge, where it is seen. */
+.pc-chat-launch {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 2147483000;
+  translate: 0 -50%;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.pc-chat-face {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+.pc-chat-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px #13213f59;
+  transition: scale 0.15s;
+}
+.pc-chat-launch:hover img,
+.pc-chat-launch:focus-visible img {
+  scale: 1.08;
+}
+.pc-chat-face svg {
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  width: 26px;
+  height: 26px;
+  padding: 5px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #13213f;
+  color: #fff;
+}
+.pc-chat-label {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #13213f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px #13213f40;
+}
+.pc-chat-launch.has-unread .pc-chat-label {
+  background: #e0218a;
+}
+.pc-chat-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #e0218a;
+}
+.pc-chat-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483000;
+  display: flex;
+  flex-direction: column;
+  width: min(360px, calc(100vw - 24px));
+  height: min(520px, calc(100vh - 110px));
+  border-radius: 16px;
+  background: #fffdf8;
+  box-shadow: 0 12px 40px #13213f59;
+  overflow: hidden;
+}
+.pc-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #13213f;
+  color: #fff;
+  font-weight: 700;
+}
+.pc-chat-head img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.pc-chat-head span {
+  flex: 1;
+}
+.pc-chat-head button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.pc-chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pc-chat-note {
+  margin: 0;
+  color: #5b6478;
+  font-size: 12px;
+}
+.pc-chat-msg {
+  max-width: 86%;
+  padding: 8px 12px;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.pc-chat-msg small {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+}
+.pc-chat-msg.you {
+  align-self: flex-end;
+  background: #13213f;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.pc-chat-msg.team {
+  align-self: flex-start;
+  background: #ece4d4;
+  border-bottom-left-radius: 4px;
+}
+.pc-chat-form {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #13213f1f;
+  background: #fff;
+}
+.pc-chat-form label {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #5b6478;
+}
+.pc-chat-form input,
+.pc-chat-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #13213f33;
+  border-radius: 10px;
+  background: #fff;
+  color: #13213f;
+  font: inherit;
+  font-size: 16px;
+}
+.pc-chat-form textarea {
+  resize: none;
+  height: 76px;
+}
+.pc-chat-form button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: #f4b731;
+  color: #13213f;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pc-chat-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.pc-chat-error {
+  margin: 0;
+  color: #9a3d25;
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .pc-chat-launch {
+    right: 10px;
+  }
+  .pc-chat-face {
+    width: 54px;
+    height: 54px;
+  }
+  .pc-chat-panel {
+    right: 12px;
+    bottom: 12px;
+  }
+}

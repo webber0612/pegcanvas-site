@@ -59,30 +59,8 @@
     for (const child of children) node.append(child);
     return node;
   };
-  const style = el('style', { textContent: `
-.pc-chat{position:fixed;right:20px;bottom:20px;z-index:2147483000;font:14px/1.5 system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;color:#13213f}
-.pc-chat *{box-sizing:border-box}
-.pc-chat-launch{display:flex;align-items:center;gap:8px;min-height:52px;padding:0 18px;border:0;border-radius:999px;background:#13213f;color:#fff;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 6px 20px #13213f4d;position:relative}
-.pc-chat-launch svg{flex:none}
-.pc-chat-dot{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border:2px solid #fff;border-radius:50%;background:#e0218a}
-.pc-chat-panel{display:flex;flex-direction:column;width:min(360px,calc(100vw - 24px));height:min(520px,calc(100vh - 110px));border-radius:16px;background:#fffdf8;box-shadow:0 12px 40px #13213f59;overflow:hidden}
-.pc-chat-head{display:flex;align-items:center;justify-content:space-between;padding:12px 12px 12px 16px;background:#13213f;color:#fff;font-weight:700}
-.pc-chat-head button{width:32px;height:32px;border:0;border-radius:8px;background:transparent;color:#fff;font-size:20px;line-height:1;cursor:pointer}
-.pc-chat-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
-.pc-chat-note{margin:0;color:#5b6478;font-size:12px}
-.pc-chat-msg{max-width:86%;padding:8px 12px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
-.pc-chat-msg small{display:block;font-size:10px;opacity:.7}
-.pc-chat-msg.you{align-self:flex-end;background:#13213f;color:#fff;border-bottom-right-radius:4px}
-.pc-chat-msg.team{align-self:flex-start;background:#ece4d4;border-bottom-left-radius:4px}
-.pc-chat-form{display:grid;gap:8px;padding:12px;border-top:1px solid #13213f1f;background:#fff}
-.pc-chat-form label{display:grid;gap:4px;font-size:12px;color:#5b6478}
-.pc-chat-form input,.pc-chat-form textarea{width:100%;padding:8px 10px;border:1px solid #13213f33;border-radius:10px;background:#fff;color:#13213f;font:inherit;font-size:16px}
-.pc-chat-form textarea{resize:none;height:76px}
-.pc-chat-form button{min-height:40px;border:0;border-radius:10px;background:#f4b731;color:#13213f;font:inherit;font-weight:700;cursor:pointer}
-.pc-chat-form button:disabled{opacity:.6;cursor:default}
-.pc-chat-error{margin:0;color:#9a3d25;font-size:12px}
-@media (max-width:600px){.pc-chat{right:12px;bottom:12px}.pc-chat-launch span{display:none}.pc-chat-launch{width:52px;padding:0;justify-content:center}}
-` });
+  // Styles live in chat-widget.css, which each page loads itself.
+  const FACE = 'data:image/webp;base64,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';
   const root = el('div', { className: 'pc-chat' });
 
   const stamp = at => new Date(at).toLocaleString([], { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -94,11 +72,13 @@
     root.replaceChildren();
     if (!isOpen) {
       if (config.launcher === false && !hasUnread()) return;
-      const launch = el('button', { className: 'pc-chat-launch', type: 'button', onclick: () => api.open() });
-      launch.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>';
-      launch.append(el('span', { textContent: hasUnread() ? t('unread') : t('open') }));
-      launch.setAttribute('aria-label', hasUnread() ? t('unread') : t('open'));
-      if (hasUnread()) launch.append(el('i', { className: 'pc-chat-dot' }));
+      const unread = hasUnread(), label = unread ? t('unread') : t('open');
+      const launch = el('button', { className: `pc-chat-launch${unread ? ' has-unread' : ''}`, type: 'button', onclick: () => api.open() });
+      const face = el('span', { className: 'pc-chat-face' }, [el('img', { src: FACE, alt: '' })]);
+      face.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>');
+      if (unread) face.append(el('i', { className: 'pc-chat-dot' }));
+      launch.append(face, el('span', { className: 'pc-chat-label', textContent: label }));
+      launch.setAttribute('aria-label', label);
       root.append(launch);
       return;
     }
@@ -121,7 +101,7 @@
     form.append(el('button', { type: 'submit', disabled: busy, textContent: busy ? t('sending') : t('send') }));
     if (!session) form.append(el('p', { className: 'pc-chat-note', textContent: t('privacy') }));
     const panel = el('section', { className: 'pc-chat-panel' }, [
-      el('header', { className: 'pc-chat-head' }, [el('span', { textContent: t('title') }),
+      el('header', { className: 'pc-chat-head' }, [el('img', { src: FACE, alt: '' }), el('span', { textContent: t('title') }),
         el('button', { type: 'button', textContent: '×', ariaLabel: t('close'), onclick: () => api.close() })]),
       body, form,
     ]);
@@ -184,7 +164,6 @@
   window.PegCanvasChat = api;
 
   const mount = () => {
-    document.head.append(style);
     document.body.append(root);
     render(); schedule(); poll();
     document.addEventListener('visibilitychange', () => { if (!document.hidden) poll(); });

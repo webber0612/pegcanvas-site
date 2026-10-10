@@ -1,9 +1,10 @@
 // Response headers for every page: no framing by other sites, and only the
 // sources this site actually uses: its own files, the Google Fonts typeface and
-// Cloudflare Web Analytics, which Cloudflare adds to pages at the edge.
+// Cloudflare Web Analytics, which Cloudflare adds to pages at the edge, and the
+// support chat's own service. The chat's styles are a file for the same reason.
 const SECURITY_HEADERS = {
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'",
+    "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com https://support-api.pegcanvas.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'",
   "X-Frame-Options": "DENY",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
