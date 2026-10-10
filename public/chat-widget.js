@@ -12,11 +12,11 @@
   const TEXT = {
     zh: {
       title: '聯絡客服', open: '聯絡客服', close: '關閉',
-      intro: '由真人回覆，可能需要一些時間。你可以先離開，回覆會留在這裡，用同一個瀏覽器再開啟就看得到。',
+      intro: 'AI 助理會先回答常見問題，答不了的會轉給真人，真人回覆可能需要一些時間。你可以先離開，回覆會留在這裡，用同一個瀏覽器再開啟就看得到。',
       email: '你的電子郵件', emailHint: '你不在線上時，我們會改用這個信箱回覆你。',
       message: '想問什麼？', send: '送出', sending: '傳送中…',
-      waiting: '已收到。我們會在這裡回覆，你不必等在線上。',
-      you: '你', team: 'PegCanvas 客服',
+      waiting: '已收到，正在回覆…',
+      you: '你', team: 'PegCanvas 客服', ai: 'PegCanvas AI 助理',
       badEmail: '請輸入有效的電子郵件。', empty: '請輸入訊息。',
       slow: '訊息傳送得有點快，請稍等一分鐘。', busy: '目前詢問的人較多，請稍後再試，或寫信到 hello@pegcanvas.com。',
       failed: '沒有送出，請再試一次；也可以寫信到 hello@pegcanvas.com。',
@@ -24,11 +24,11 @@
     },
     en: {
       title: 'Contact support', open: 'Contact support', close: 'Close',
-      intro: 'A person replies, so it may take some time. You can leave; the reply stays here and shows when you open this site again in the same browser.',
+      intro: 'An AI assistant answers common questions first and passes the rest to a person, who may take some time to reply. You can leave; the reply stays here and shows when you open this site again in the same browser.',
       email: 'Your email', emailHint: 'If you are offline, we reply to this address instead.',
       message: 'How can we help?', send: 'Send', sending: 'Sending…',
-      waiting: 'Received. We will reply here; you do not need to stay online.',
-      you: 'You', team: 'PegCanvas support',
+      waiting: 'Received. Replying…',
+      you: 'You', team: 'PegCanvas support', ai: 'PegCanvas AI assistant',
       badEmail: 'Enter a valid email address.', empty: 'Write a message first.',
       slow: 'That is a lot of messages. Please wait a minute.', busy: 'We are busy right now. Try again later, or email hello@pegcanvas.com.',
       failed: 'Not sent. Please try again, or email hello@pegcanvas.com.',
@@ -107,7 +107,7 @@
     if (!messages.length) body.append(el('p', { className: 'pc-chat-note', textContent: t('intro') }));
     for (const m of messages)
       body.append(el('div', { className: `pc-chat-msg ${m.from === 'team' ? 'team' : 'you'}` }, [
-        el('small', { textContent: `${m.from === 'team' ? t('team') : t('you')} · ${stamp(m.at)}` }), m.text,
+        el('small', { textContent: `${m.from !== 'team' ? t('you') : m.by === 'assistant' ? t('ai') : t('team')} · ${stamp(m.at)}` }), m.text,
       ]));
     if (messages.length && messages[messages.length - 1].from === 'you')
       body.append(el('p', { className: 'pc-chat-note', textContent: t('waiting') }));
