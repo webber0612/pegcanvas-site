@@ -22,6 +22,18 @@
       failed: '沒有送出，請再試一次；也可以寫信到 hello@pegcanvas.com。',
       expired: '這段對話已過期，請重新開始。', privacy: '對話內容保存 90 天。', unread: '有新回覆',
     },
+    'zh-cn': {
+      title: '联系客服', open: '联系客服', close: '关闭',
+      intro: 'AI 助理会先回答常见问题，答不了的会转给真人，真人回复可能需要一些时间。你可以先离开，回复会留在这里，用同一个浏览器再打开就能看到。\n\n公开测试中：你的意见被采纳，就送一份 Personal 方案。',
+      email: '你的电子邮件', emailHint: '你不在线时，我们会改用这个邮箱回复你。',
+      message: '想问什么？', send: '发送', sending: '发送中…',
+      waiting: '已收到，正在回复…',
+      you: '你', team: 'PegCanvas 客服', ai: 'PegCanvas AI 助理',
+      badEmail: '请输入有效的电子邮件。', empty: '请输入消息。',
+      slow: '消息发送得有点快，请稍等一分钟。', busy: '目前咨询的人较多，请稍后再试，或写信到 hello@pegcanvas.com。',
+      failed: '没有发送成功，请再试一次；也可以写信到 hello@pegcanvas.com。',
+      expired: '这段对话已过期，请重新开始。', privacy: '对话内容保存 90 天。', unread: '有新回复',
+    },
     en: {
       title: 'Contact support', open: 'Contact support', close: 'Close',
       intro: 'An AI assistant answers common questions first and passes the rest to a person, who may take some time to reply. You can leave; the reply stays here and shows when you open this site again in the same browser.\n\nPublic beta: if we adopt your suggestion, you get a Personal plan.',
@@ -36,7 +48,11 @@
     },
   };
   let locale = config.locale;
-  const t = key => TEXT[(locale || document.documentElement.lang || 'en').toLowerCase().startsWith('zh') ? 'zh' : 'en'][key];
+  const language = () => {
+    const wanted = (locale || document.documentElement.lang || 'en').toLowerCase();
+    return /^zh-(cn|sg|my|hans)/.test(wanted) ? 'zh-cn' : wanted.startsWith('zh') ? 'zh' : 'en';
+  };
+  const t = key => TEXT[language()][key];
 
   const read = () => { try { return JSON.parse(localStorage.getItem(STORE)) || null; } catch { return null; } };
   const write = value => { try { value ? localStorage.setItem(STORE, JSON.stringify(value)) : localStorage.removeItem(STORE); } catch { /* private window */ } };
@@ -119,7 +135,7 @@
     try {
       if (!session) {
         const email = form.elements.email.value.trim();
-        const started = await call('POST', '/chat/start', { email, locale: t('title') === TEXT.zh.title ? 'zh' : 'en' });
+        const started = await call('POST', '/chat/start', { email, locale: language() === 'en' ? 'en' : 'zh' });
         session = { ...started, email, seen: 0 };
         write(session);
       }

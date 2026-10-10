@@ -314,3 +314,4 @@ a.badge:hover{box-shadow:0 6px 18px rgba(19,33,63,.14)}
 
 /* the demo offers four counts; the editor takes any */
 .pill-more{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font:600 14px/1 var(--font);color:var(--muted);white-space:nowrap}
+:lang(zh-Hans){--font:'Bricolage Grotesque',"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif}

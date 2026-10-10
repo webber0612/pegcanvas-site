@@ -23,3 +23,7 @@ Hero (split-panel interaction) → feature marquee → room-scene tabs → sloga
 `/zh/` is fully Traditional Chinese and `/en/` is fully English. The header language links work without JavaScript. The root route uses a small script to select the saved language, then the browser language (Chinese browsers use Traditional Chinese; others use English). Explicit locale URLs always take precedence. Without JavaScript, the root provides the complete English page.
 
 Edit shared markup in `src/page.html`, translations in `src/copy.json`, styling in `public/site.css` and the small progressive-enhancement script in `public/site.js` (the page stays readable without JavaScript). Run `node scripts/build.mjs` to regenerate the static pages; deployment runs the same dependency-free command. The approved slogan and AI disclaimers are displayed in one language at a time. Brand names, file formats and email addresses retain their original spelling.
+
+## Simplified Chinese
+
+The `/zh-cn/` pages are the Traditional copy put through `scripts/zh-cn-map.json` at build time; nothing is written twice. The table is made in the editor repository (`pnpm make:zh-cn`) from the OpenCC dictionaries (Apache-2.0, via opencc-js) plus a short list of our own wording. Regenerate it there after adding Chinese copy that uses new vocabulary.
