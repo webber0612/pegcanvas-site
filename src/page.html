@@ -82,23 +82,39 @@
     </div>
 
     <section class="section beta" id="beta" aria-labelledby="beta-title">
-      <div class="wrap beta-card">
-        <div class="beta-head">
-          <p class="eyebrow">{{betaEyebrow}}</p>
-          <h2 id="beta-title">{{betaTitle}}</h2>
-          <p class="beta-body">{{betaBody}}</p>
+      <div class="wrap">
+        <div class="blast">
+          <div class="blast-main">
+            <p class="blast-kicker">{{betaEyebrow}}</p>
+            <h2 id="beta-title">{{betaTitle}}</h2>
+            <p class="blast-prize"><b>50</b><span>{{betaPrize}}</span></p>
+            <p class="blast-body">{{betaBody}}</p>
+            <div class="beta-actions">
+              <a class="btn blast-cta" href="https://app.pegcanvas.com/">{{betaCta}} →</a>
+              <a class="btn blast-ghost" href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{betaFeedback}}</a>
+            </div>
+          </div>
+          <ol class="blast-how">
+            <li><span>1</span>{{betaHow1}}</li>
+            <li><span>2</span>{{betaHow2}}</li>
+            <li><span>3</span>{{betaHow3}}</li>
+          </ol>
         </div>
-        <ol class="beta-steps">
-          <li><span class="num">1</span><div><strong>{{betaStep1Title}}</strong><p>{{betaStep1Body}}</p></div></li>
-          <li><span class="num">2</span><div><strong>{{betaStep2Title}}</strong><p>{{betaStep2Body}}</p></div></li>
-          <li><span class="num">3</span><div><strong>{{betaStep3Title}}</strong><p>{{betaStep3Body}}</p></div></li>
-          <li><span class="num">4</span><div><strong>{{betaStep4Title}}</strong><p>{{betaStep4Body}}</p></div></li>
-        </ol>
-        <div class="beta-actions">
-          <a class="btn btn-primary" href="https://app.pegcanvas.com/">{{betaCta}}</a>
-          <a class="btn btn-ghost" href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{betaFeedback}}</a>
+        <div class="tasks">
+          <div class="tasks-head">
+            <h3>{{betaTasksTitle}}</h3>
+            <p>{{betaTasksNote}}</p>
+          </div>
+          <ul class="tasks-list">
+            <li><b>+5</b><div><strong>{{betaTask1Title}}</strong><p>{{betaTask1Body}}</p></div></li>
+            <li><b>+1</b><div><strong>{{betaTask2Title}}</strong><p>{{betaTask2Body}}</p></div></li>
+            <li><b>+1</b><div><strong>{{betaTask3Title}}</strong><p>{{betaTask3Body}}</p></div></li>
+          </ul>
         </div>
-        <p class="small">{{betaRules}}</p>
+        <div class="beta-rules">
+          <h3>{{betaRulesTitle}}</h3>
+          <ol>{{betaRulesList}}</ol>
+        </div>
       </div>
     </section>
 
