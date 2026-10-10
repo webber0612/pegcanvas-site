@@ -155,9 +155,14 @@
               <div class="size-demo">
                 <div class="size-stage"><div class="sizebox" data-sizebox></div></div>
                 <div class="size-ctrl">
-                  <label for="panel-size"><strong>{{panelSize}}</strong></label>
-                  <p class="size-value"><span data-size>200</span> <small>× <span data-size>200</span> mm</small></p>
-                  <input id="panel-size" type="range" min="120" max="240" step="40" value="200">
+                  <p class="size-title"><strong>{{panelSize}}</strong></p>
+                  <p class="size-value"><span data-size="width">200</span> <small>× <span data-size="height">160</span> mm</small></p>
+                  <label class="size-axis" for="panel-width">{{panelWidth}}
+                    <input id="panel-width" type="range" min="120" max="240" step="20" value="200" data-axis="width">
+                  </label>
+                  <label class="size-axis" for="panel-height">{{panelHeight}}
+                    <input id="panel-height" type="range" min="120" max="240" step="20" value="160" data-axis="height">
+                  </label>
                   <p class="small">{{sizeNote}}</p>
                 </div>
               </div>
@@ -215,19 +220,19 @@
             <div><h3>Personal</h3><p class="sub">{{personalSub}}</p></div>
             <p class="amount">$19 <s>$24</s></p>
             <ul>{{personalList}}</ul>
-            <a class="btn btn-primary" href="mailto:hello@pegcanvas.com?subject={{mailSubject}}">{{earlyBird}}</a>
+            <a class="btn btn-primary" href="#contact">{{earlyBird}}</a>
           </div>
           <div class="bento price">
             <div><h3>Commercial</h3><p class="sub">{{commercialSub}}</p></div>
             <p class="amount">$69 <s>$89</s></p>
             <ul>{{commercialList}}</ul>
-            <a class="btn btn-ghost" href="mailto:hello@pegcanvas.com?subject={{mailSubject}}">{{earlyBird}}</a>
+            <a class="btn btn-ghost" href="#contact">{{earlyBird}}</a>
           </div>
           <div class="bento price dark">
             <div><h3>Studio</h3><p class="sub">{{studioSub}}</p></div>
             <p class="amount">$149 <s>$199</s></p>
             <ul>{{studioList}}</ul>
-            <a class="btn btn-yellow" href="mailto:hello@pegcanvas.com?subject={{mailSubject}}">{{earlyBird}}</a>
+            <a class="btn btn-yellow" href="#contact">{{earlyBird}}</a>
           </div>
         </div>
         <p class="small">{{licenseNote}}</p>
@@ -255,9 +260,14 @@
           <p>{{ctaCopy}}</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-yellow" href="mailto:hello@pegcanvas.com?subject={{mailSubject}}">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            {{notifyMe}}</a>
+          <form class="notify-form" data-notify data-locale="{{locale}}" data-done="{{notifyDone}}" data-bad="{{notifyBad}}" data-fail="{{notifyFail}}" novalidate>
+            <label for="notify-email">{{notifyLabel}}</label>
+            <div class="notify-row">
+              <input id="notify-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com">
+              <button class="btn btn-yellow" type="submit">{{notifyMe}}</button>
+            </div>
+            <p class="notify-status" role="status" data-consent="{{notifyConsent}}">{{notifyConsent}}</p>
+          </form>
           <a class="cta-mail" href="mailto:hello@pegcanvas.com">hello@pegcanvas.com</a>
           <p class="cta-note">{{orTry}}</p>
         </div>

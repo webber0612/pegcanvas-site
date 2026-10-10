@@ -74,8 +74,8 @@
 
     <div class="marquee-band" aria-hidden="true">
       <div class="marquee">
-        <span>PNG · JPEG · SVG</span><i>●</i><span>4 / 8 / 12 / 16 色分色預覽</span><i>●</i><span>120–240 mm 板件</span><i>●</i><span>四向拼接成整面牆</span><i>●</i><span>每板一盤的多材料 3MF</span><i>●</i>
-        <span>PNG · JPEG · SVG</span><i>●</i><span>4 / 8 / 12 / 16 色分色預覽</span><i>●</i><span>120–240 mm 板件</span><i>●</i><span>四向拼接成整面牆</span><i>●</i><span>每板一盤的多材料 3MF</span><i>●</i>
+        <span>PNG · JPEG · SVG</span><i>●</i><span>4 / 8 / 12 / 16 色分色預覽</span><i>●</i><span>寬高各 120–240 mm</span><i>●</i><span>四向拼接成整面牆</span><i>●</i><span>每板一盤的多材料 3MF</span><i>●</i>
+        <span>PNG · JPEG · SVG</span><i>●</i><span>4 / 8 / 12 / 16 色分色預覽</span><i>●</i><span>寬高各 120–240 mm</span><i>●</i><span>四向拼接成整面牆</span><i>●</i><span>每板一盤的多材料 3MF</span><i>●</i>
       </div>
     </div>
 
@@ -155,10 +155,15 @@
               <div class="size-demo">
                 <div class="size-stage"><div class="sizebox" data-sizebox></div></div>
                 <div class="size-ctrl">
-                  <label for="panel-size"><strong>單板尺寸</strong></label>
-                  <p class="size-value"><span data-size>200</span> <small>× <span data-size>200</span> mm</small></p>
-                  <input id="panel-size" type="range" min="120" max="240" step="40" value="200">
-                  <p class="small">120–240 mm，依你的印表機大小選擇；四個方向都能加板，拼成整面牆。</p>
+                  <p class="size-title"><strong>單板尺寸</strong></p>
+                  <p class="size-value"><span data-size="width">200</span> <small>× <span data-size="height">160</span> mm</small></p>
+                  <label class="size-axis" for="panel-width">寬
+                    <input id="panel-width" type="range" min="120" max="240" step="20" value="200" data-axis="width">
+                  </label>
+                  <label class="size-axis" for="panel-height">高
+                    <input id="panel-height" type="range" min="120" max="240" step="20" value="160" data-axis="height">
+                  </label>
+                  <p class="small">寬和高可以分開調整，各 120–240 mm，依你的印表機大小選擇；四個方向都能加板，拼成整面牆。</p>
                 </div>
               </div>
             </div>
@@ -215,19 +220,19 @@
             <div><h3>Personal</h3><p class="sub">完整功能，給自己用</p></div>
             <p class="amount">$19 <s>$24</s></p>
             <ul><li>板件、圖層、顏色全部不限</li><li>跨板圖案與大型拼接牆</li><li>可免費分享作品</li><li class="muted">不可販售</li></ul>
-            <a class="btn btn-primary" href="mailto:hello@pegcanvas.com?subject=PegCanvas%20%E9%96%8B%E8%B3%A3%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98">登記早鳥通知</a>
+            <a class="btn btn-primary" href="#contact">登記早鳥通知</a>
           </div>
           <div class="bento price">
             <div><h3>Commercial</h3><p class="sub">賣你印出來的板子</p></div>
             <p class="amount">$69 <s>$89</s></p>
             <ul><li>Personal 全部功能</li><li>販售自己列印的實體洞洞板</li><li>接客戶訂製，設計並列印</li><li class="muted">不含販售數位檔案</li></ul>
-            <a class="btn btn-ghost" href="mailto:hello@pegcanvas.com?subject=PegCanvas%20%E9%96%8B%E8%B3%A3%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98">登記早鳥通知</a>
+            <a class="btn btn-ghost" href="#contact">登記早鳥通知</a>
           </div>
           <div class="bento price dark">
             <div><h3>Studio</h3><p class="sub">工作室與數位商品賣家</p></div>
             <p class="amount">$149 <s>$199</s></p>
             <ul><li>Commercial 全部權利</li><li>販售、交付 3MF／STL 數位檔</li><li>經營數位模型訂製服務</li><li>3 個使用席位</li></ul>
-            <a class="btn btn-yellow" href="mailto:hello@pegcanvas.com?subject=PegCanvas%20%E9%96%8B%E8%B3%A3%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98">登記早鳥通知</a>
+            <a class="btn btn-yellow" href="#contact">登記早鳥通知</a>
           </div>
         </div>
         <p class="small">所有方案都可以免費分享作品，販售需要對應的方案。授權範圍是 PegCanvas 輸出檔案的使用權；你使用的圖片、角色或品牌素材，需自行取得授權。</p>
@@ -252,12 +257,17 @@
         <div class="cta-copy">
           <p class="eyebrow eyebrow-yellow">即將開放</p>
           <h2 id="cta-title">付費方案即將開放。</h2>
-          <p>寫信給我們登記，開放時第一個通知你，早鳥方案不錯過。</p>
+          <p>留下電子郵件，付費方案開放時我們第一時間通知你，不錯過早鳥價。</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-yellow" href="mailto:hello@pegcanvas.com?subject=PegCanvas%20%E9%96%8B%E8%B3%A3%E9%80%9A%E7%9F%A5%E7%99%BB%E8%A8%98">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            登記開賣通知</a>
+          <form class="notify-form" data-notify data-locale="zh" data-done="已登記。付費方案開放時，我們會寄一封信通知你。" data-bad="請輸入有效的電子郵件。" data-fail="沒有登記成功，請再試一次，或寫信到 hello@pegcanvas.com。" novalidate>
+            <label for="notify-email">你的電子郵件</label>
+            <div class="notify-row">
+              <input id="notify-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com">
+              <button class="btn btn-yellow" type="submit">登記開賣通知</button>
+            </div>
+            <p class="notify-status" role="status" data-consent="只在付費方案開放時通知一次，不會寄其他信。">只在付費方案開放時通知一次，不會寄其他信。</p>
+          </form>
           <a class="cta-mail" href="mailto:hello@pegcanvas.com">hello@pegcanvas.com</a>
           <p class="cta-note">或先 <a href="https://app.pegcanvas.com/">試用編輯器</a>。</p>
         </div>

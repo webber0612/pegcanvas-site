@@ -136,9 +136,10 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .swatches span{flex:1 1 0;min-width:0;height:72px;transition:background .4s ease}
 .size-demo{display:flex;flex-wrap:wrap;gap:32px;align-items:center}
 .size-stage{flex:0 0 auto;width:340px;max-width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--cream);border-radius:20px}
-.sizebox{width:58.8%;aspect-ratio:1/1;background-color:#E9DCC4;background-image:radial-gradient(circle,var(--ink) 2px,transparent 2.6px);background-size:14px 14px;border-radius:8px;transition:width .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px rgba(19,33,63,.15)}
+.sizebox{width:58.8%;aspect-ratio:1/1;background-color:#E9DCC4;background-image:radial-gradient(circle,var(--ink) 2px,transparent 2.6px);background-size:14px 14px;border-radius:8px;transition:width .35s cubic-bezier(.2,.8,.2,1),aspect-ratio .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px rgba(19,33,63,.15)}
 .size-ctrl{flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:16px}
-.size-ctrl label{font-size:18px}
+.size-title{font-size:18px}
+.size-axis{display:grid;gap:2px;font-size:14px;font-weight:700;color:var(--muted)}
 .size-value{font-size:48px;font-weight:800;letter-spacing:-.02em;line-height:1}
 .size-value small{font-size:22px;font-weight:700}
 .size-ctrl input{width:100%;accent-color:var(--cobalt);height:28px}
@@ -249,3 +250,14 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .faq-more{font-weight:700;color:var(--cobalt)}
 
 .faq-list details{scroll-margin-top:96px}
+
+/* launch notice form */
+.notify-form{display:grid;gap:8px;width:100%;max-width:460px}
+.notify-form label{font-size:13px;color:rgba(247,242,232,.8)}
+.notify-row{display:flex;gap:8px;flex-wrap:wrap}
+.notify-row input{flex:1 1 220px;min-width:0;min-height:52px;padding:0 16px;border:2px solid transparent;border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:16px}
+.notify-row input:focus-visible{outline:none;border-color:var(--mustard)}
+.notify-row .btn{min-height:52px}
+.notify-status{margin:0;font-size:13px;color:rgba(247,242,232,.7)}
+.notify-form[data-state="done"] .notify-status{color:var(--mustard);font-weight:700}
+.notify-form[data-state="error"] .notify-status{color:#ffb4a3}

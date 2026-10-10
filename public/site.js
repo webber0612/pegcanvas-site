@@ -61,14 +61,47 @@
   pills.forEach((p) => p.addEventListener('click', () => paint(Number(p.dataset.colors))));
   paint(8);
 
-  // Panel size demo: 120-240 mm.
-  const range = document.getElementById('panel-size');
+  // Panel size demo: width and height each 120-240 mm.
   const box = document.querySelector('[data-sizebox]');
-  const labels = document.querySelectorAll('[data-size]');
+  const axes = document.querySelectorAll('input[data-axis]');
   const size = () => {
-    const v = Number(range.value);
-    labels.forEach((l) => { l.textContent = v; });
-    if (box) box.style.width = `${(v / 240) * 88}%`;
+    const mm = {};
+    axes.forEach((input) => {
+      mm[input.dataset.axis] = Number(input.value);
+      document.querySelectorAll(`[data-size="${input.dataset.axis}"]`).forEach((l) => { l.textContent = input.value; });
+    });
+    if (!box || !mm.width || !mm.height) return;
+    box.style.width = `${(mm.width / 240) * 88}%`;
+    box.style.aspectRatio = `${mm.width} / ${mm.height}`;
   };
-  if (range) { range.addEventListener('input', size); size(); }
+  axes.forEach((input) => input.addEventListener('input', size));
+  size();
+
+  // Launch notice: one email when paid plans open.
+  document.querySelectorAll('form[data-notify]').forEach((form) => {
+    const status = form.querySelector('.notify-status');
+    const button = form.querySelector('button');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = form.elements.email.value.trim();
+      const say = (text, state) => { status.textContent = text; form.dataset.state = state; };
+      if (!email) return say(form.dataset.bad, 'error');
+      button.disabled = true;
+      try {
+        const response = await fetch('https://support-api.pegcanvas.com/notify/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email, locale: form.dataset.locale, source: 'site' }),
+        });
+        if (response.ok) { say(form.dataset.done, 'done'); form.elements.email.value = ''; }
+        else {
+          const result = await response.json().catch(() => ({}));
+          say(result.error === 'email' ? form.dataset.bad : form.dataset.fail, 'error');
+        }
+      } catch {
+        say(form.dataset.fail, 'error');
+      }
+      button.disabled = false;
+    });
+  });
 })();
