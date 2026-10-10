@@ -12,7 +12,7 @@
   const TEXT = {
     zh: {
       title: '聯絡客服', open: '聯絡客服', close: '關閉',
-      intro: 'AI 助理會先回答常見問題，答不了的會轉給真人，真人回覆可能需要一些時間。你可以先離開，回覆會留在這裡，用同一個瀏覽器再開啟就看得到。',
+      intro: 'AI 助理會先回答常見問題，答不了的會轉給真人，真人回覆可能需要一些時間。你可以先離開，回覆會留在這裡，用同一個瀏覽器再開啟就看得到。\n\n公開測試中：你的意見被採納，就送一份 Personal 方案。',
       email: '你的電子郵件', emailHint: '你不在線上時，我們會改用這個信箱回覆你。',
       message: '想問什麼？', send: '送出', sending: '傳送中…',
       waiting: '已收到，正在回覆…',
@@ -24,7 +24,7 @@
     },
     en: {
       title: 'Contact support', open: 'Contact support', close: 'Close',
-      intro: 'An AI assistant answers common questions first and passes the rest to a person, who may take some time to reply. You can leave; the reply stays here and shows when you open this site again in the same browser.',
+      intro: 'An AI assistant answers common questions first and passes the rest to a person, who may take some time to reply. You can leave; the reply stays here and shows when you open this site again in the same browser.\n\nPublic beta: if we adopt your suggestion, you get a Personal plan.',
       email: 'Your email', emailHint: 'If you are offline, we reply to this address instead.',
       message: 'How can we help?', send: 'Send', sending: 'Sending…',
       waiting: 'Received. Replying…',

@@ -136,6 +136,7 @@
 }
 .pc-chat-note {
   margin: 0;
+  white-space: pre-line;
   color: #5b6478;
   font-size: 12px;
 }
