@@ -247,3 +247,5 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .faq-page .faq-list{margin-top:8px}
 .faq-page .faq-list p{color:var(--muted)}
 .faq-more{font-weight:700;color:var(--cobalt)}
+
+.faq-list details{scroll-margin-top:96px}
