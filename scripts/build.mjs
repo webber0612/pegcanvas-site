@@ -6,6 +6,7 @@ const pages = [
   ['src/page.html', ''],
   ['src/legal.html', 'legal/'],
   ['src/faq.html', 'faq/'],
+  ['src/updates.html', 'updates/'],
 ];
 // Browsers keep styles and scripts for hours. Each link carries a stamp of the
 // file's contents, so a page never arrives with an older stylesheet than it needs.

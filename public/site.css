@@ -315,3 +315,13 @@ a.badge:hover{box-shadow:0 6px 18px rgba(19,33,63,.14)}
 /* the demo offers four counts; the editor takes any */
 .pill-more{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font:600 14px/1 var(--font);color:var(--muted);white-space:nowrap}
 :lang(zh-Hans){--font:'Bricolage Grotesque',"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+
+/* updates: what has changed, newest first */
+.latest{margin:18px 0 0;font-size:15px;font-weight:700}
+.latest a{color:var(--cobalt);text-decoration:none;border-bottom:2px solid rgba(36,87,197,.25)}
+.latest a:hover{border-bottom-color:var(--cobalt)}
+.updates-page .update{margin-top:40px;padding-top:28px;border-top:2px solid var(--ink)}
+.updates-page .update h2{margin:0;font-size:clamp(24px,3vw,32px)}
+.updates-page .update h3{margin:24px 0 10px;font-size:15px;letter-spacing:1px;color:var(--cobalt)}
+.updates-page .update ul{margin:0;padding-left:22px;display:grid;gap:10px;font-size:17px;line-height:1.7}
+.updates-page .update li strong{color:var(--ink)}
