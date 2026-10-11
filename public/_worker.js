@@ -19,6 +19,11 @@ export default {
       url.hostname = "pegcanvas.com";
       return Response.redirect(url.toString(), 301);
     }
+    // A shared picture's page and the picture itself are kept by the support
+    // service; the short address here just leads to them. That service sets its
+    // own headers for these pages.
+    if (request.method === "GET" && /^\/s\/[0-9a-f]{12}(\.jpg)?$/.test(url.pathname))
+      return fetch(`https://support-api.pegcanvas.com${url.pathname}`, { redirect: "manual" });
     const asset = await env.ASSETS.fetch(request);
     const response = new Response(asset.body, asset);
     for (const [name, value] of Object.entries(SECURITY_HEADERS))
