@@ -1,0 +1,24 @@
+[
+  {
+    "id": "girl-with-a-pearl",
+    "modelId": "3423601",
+    "modelSlug": "pegcanvas-girl-with-a-pearl-pegboard-12-colors",
+    "profileId": "3901666",
+    "colors": 12,
+    "panels": 4,
+    "sizeMm": [400, 400],
+    "preview": "girl-with-a-pearl-print",
+    "imageSize": [960, 1705],
+    "previewKind": "photo",
+    "zh": {
+      "title": "幾何色塊・珍珠耳環女孩",
+      "description": "把經典肖像變成牆上的幾何色塊。四片洞洞板拼成一幅畫，色彩之外，也保留收納的可能。",
+      "imageAlt": "四片實際列印的洞洞板拼成珍珠耳環女孩，呈現藍色頭巾與黃色幾何色塊"
+    },
+    "en": {
+      "title": "Girl with a Pearl",
+      "description": "A classic portrait, reimagined in bold geometric color. Four pegboard panels come together as one artwork, with room to hang the things you love.",
+      "imageAlt": "Four printed pegboard panels form a geometric girl with a blue headscarf and yellow accents"
+    }
+  }
+]

@@ -35,6 +35,7 @@
         <span>Peg<span class="brand-accent">Canvas</span></span>
       </a>
       <div class="nav-links">
+        <a class="navlink" href="#free-downloads">{{freeNav}}</a>
         <a class="navlink" href="#scenes">{{navInspiration}}</a>
         <a class="navlink" href="#how">{{navHow}}</a>
         <a class="navlink" href="#pricing">{{navPricing}}</a>
@@ -55,7 +56,7 @@
           <div class="actions">
             <a class="btn btn-primary" href="https://app.pegcanvas.com/">{{startDesign}}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn-ghost" href="#how">{{seeHow}}</a>
+            <a class="btn btn-ghost" href="#free-downloads">{{freeHeroCta}}</a>
           </div>
           <ul class="checks">
             <li>{{check1}}</li>
@@ -82,6 +83,20 @@
         <span>PNG · JPEG · SVG</span><i>●</i><span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
       </div>
     </div>
+
+    <section class="section free-designs" id="free-downloads" aria-labelledby="free-title">
+      <div class="wrap stack">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">{{freeEyebrow}}</p>
+            <h2 id="free-title">{{freeTitle}}</h2>
+            <p class="lead-sm">{{freeIntro}}</p>
+          </div>
+        </div>
+        <div class="free-designs-grid {{freeGridClass}}">{{freeDesignCards}}</div>
+        <div class="free-designs-footer"><p>{{freeCreatePrompt}}</p><a href="https://app.pegcanvas.com/">{{freeCreateCta}} <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
 
     <section class="section beta" id="beta" aria-labelledby="beta-title">
       <div class="wrap">
@@ -351,7 +366,7 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <p>© 2026 PegCanvas · {{ownership}}</p>
-      <p class="footer-links"><a href="/{{locale}}/updates/">{{updatesLink}}</a><a href="/{{locale}}/faq/">{{faqLink}}</a><a href="/{{locale}}/legal/#privacy">{{privacyLink}}</a><a href="/{{locale}}/legal/#copyright">{{copyrightLink}}</a><a href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{support}}</a></p>
+      <p class="footer-links"><a href="#free-downloads">{{freeNav}}</a><a href="/{{locale}}/updates/">{{updatesLink}}</a><a href="/{{locale}}/faq/">{{faqLink}}</a><a href="/{{locale}}/legal/#privacy">{{privacyLink}}</a><a href="/{{locale}}/legal/#copyright">{{copyrightLink}}</a><a href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{support}}</a></p>
     </div>
   </footer>
   <script src="/chat-widget.js" defer></script>
