@@ -27,6 +27,7 @@ assert(Array.isArray(freeDesigns) && freeDesigns.length > 0, 'Add at least one f
 assert.equal(new Set(freeDesigns.map(item => item.id)).size, freeDesigns.length, 'Duplicate free design.');
 for (const item of freeDesigns) {
   if (item.downloadPending !== undefined) assert.equal(typeof item.downloadPending, 'boolean', 'Invalid downloadPending.');
+  if (item.cultsPath !== undefined) assert(/^[a-z0-9-]+\/[a-z0-9-]+$/.test(item.cultsPath), 'Invalid cultsPath.');
   for (const field of ['id', 'preview']) assert(/^[a-z0-9-]+$/.test(item[field]), `Invalid ${field}.`);
   if (!item.downloadPending) {
     assert(/^[a-z0-9-]+$/.test(item.modelSlug), 'Invalid modelSlug.');
@@ -82,6 +83,14 @@ for (const [locale, strings] of Object.entries(copy)) {
     const text = item[locale === 'en' ? 'en' : 'zh'];
     const title = escapeHtml(localize(text.title));
     const url = item.downloadPending ? undefined : `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}${item.profileId ? `#profileId-${item.profileId}` : ''}`;
+    const downloadLinks = [
+      ...(url ? [{ name: 'MakerWorld', url, label: strings.freeDownload }] : []),
+      ...(item.cultsPath ? [{ name: 'Cults3D', url: `https://cults3d.com/en/3d-model/${item.cultsPath}`, label: strings.freeDownloadCults }] : []),
+    ];
+    const downloads = downloadLinks.length ? `<div class="free-design-downloads" role="group" aria-label="${escapeHtml(strings.freeChoosePlatform)}">
+      <p class="free-design-download-label">${escapeHtml(strings.freeChoosePlatform)}</p>
+      <div class="free-design-download-links">${downloadLinks.map(link => `<a class="btn btn-ghost free-design-download" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label + strings.freeNewTab)}"><span>${link.name}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>`).join('')}</div>
+    </div>` : '';
     const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
     const imageSizes = freeDesigns.length === 1 ? '(min-width: 860px) 620px, 100vw' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, 100vw';
     const printImage = `<img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${imageSizes}" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">`;
@@ -114,7 +123,7 @@ for (const [locale, strings] of Object.entries(copy)) {
         </div>
         <div class="free-design-actions">
         ${item.originalPhoto ? `<a class="free-design-original" href="/assets/${item.originalPhoto}" target="_blank" rel="noopener noreferrer">${escapeHtml(strings.freeOriginalPhoto)}<span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>` : ''}
-        ${item.downloadPending ? `<p class="free-design-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : `<a class="btn btn-primary free-design-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(strings.freeDownload)}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>`}
+        ${downloads}${item.downloadPending ? `\n        <p class="free-design-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : ''}
         </div>
       </div>
     </article>`;
