@@ -26,11 +26,21 @@ const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp
 assert(Array.isArray(freeDesigns) && freeDesigns.length > 0, 'Add at least one free design.');
 assert.equal(new Set(freeDesigns.map(item => item.id)).size, freeDesigns.length, 'Duplicate free design.');
 for (const item of freeDesigns) {
-  for (const field of ['id', 'modelSlug', 'preview']) assert(/^[a-z0-9-]+$/.test(item[field]), `Invalid ${field}.`);
-  for (const field of ['modelId', 'profileId']) assert(/^\d+$/.test(item[field]), `Invalid ${field}.`);
+  if (item.downloadPending !== undefined) assert.equal(typeof item.downloadPending, 'boolean', 'Invalid downloadPending.');
+  for (const field of ['id', 'preview']) assert(/^[a-z0-9-]+$/.test(item[field]), `Invalid ${field}.`);
+  if (!item.downloadPending) {
+    assert(/^[a-z0-9-]+$/.test(item.modelSlug), 'Invalid modelSlug.');
+    assert(/^\d+$/.test(item.modelId), 'Invalid modelId.');
+    if (item.profileId !== undefined) assert(/^\d+$/.test(item.profileId), 'Invalid profileId.');
+  }
+  if (item.originalPhoto) {
+    assert(/^[a-z0-9-]+\.webp$/.test(item.originalPhoto), 'Invalid originalPhoto.');
+    await readFile(new URL(`public/assets/${item.originalPhoto}`, root));
+  }
   for (const field of ['colors', 'panels']) assert(Number.isSafeInteger(item[field]) && item[field] > 0, `Invalid ${field}.`);
   for (const field of ['sizeMm', 'imageSize']) assert(Array.isArray(item[field]) && item[field].length === 2 && item[field].every(n => Number.isFinite(n) && n > 0), `Invalid ${field}.`);
-  assert(['photo', 'render', 'ai'].includes(item.previewKind), 'Label each preview accurately.');
+  assert(['photo', 'retouched-photo', 'render', 'ai'].includes(item.previewKind), 'Label each preview accurately.');
+  if (item.previewKind === 'retouched-photo') assert(item.originalPhoto, 'Retouched photos must link to the original.');
   for (const lang of ['zh', 'en']) for (const field of ['title', 'description', 'imageAlt']) assert(typeof item[lang]?.[field] === 'string' && item[lang][field], `Missing ${lang} ${field}.`);
   for (const width of [480, 960]) await readFile(new URL(`public/assets/${item.preview}-${width}.webp`, root));
 }
@@ -65,8 +75,8 @@ for (const [locale, strings] of Object.entries(copy)) {
   strings.freeDesignCards = freeDesigns.map(item => {
     const text = item[locale === 'en' ? 'en' : 'zh'];
     const title = escapeHtml(localize(text.title));
-    const url = `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}#profileId-${item.profileId}`;
-    const caption = strings[{ photo: 'freePhotoLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
+    const url = item.downloadPending ? undefined : `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}${item.profileId ? `#profileId-${item.profileId}` : ''}`;
+    const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
     return `<article class="free-design" aria-labelledby="work-${item.id}">
       <figure class="free-design-photo">
         <img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${freeDesigns.length === 1 ? '(min-width: 860px) 620px, ' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, '}100vw" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">
@@ -77,7 +87,8 @@ for (const [locale, strings] of Object.entries(copy)) {
         <h3 id="work-${item.id}">${title}</h3>
         <ul class="free-design-meta" aria-label="${escapeHtml(strings.freeSpecsLabel)}"><li>${item.colors} ${escapeHtml(strings.freeColors)}</li><li>${item.panels} ${escapeHtml(strings.freePanels)}</li><li>${item.sizeMm.join(' × ')} mm</li></ul>
         <p class="free-design-description">${escapeHtml(localize(text.description))}</p>
-        <a class="btn btn-primary free-design-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(strings.freeDownload)}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>
+        ${item.originalPhoto ? `<a class="free-design-original" href="/assets/${item.originalPhoto}" target="_blank" rel="noopener noreferrer">${escapeHtml(strings.freeOriginalPhoto)}<span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>` : ''}
+        ${item.downloadPending ? `<p class="free-design-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : `<a class="btn btn-primary free-design-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(strings.freeDownload)}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>`}
       </div>
     </article>`;
   }).join('\n');

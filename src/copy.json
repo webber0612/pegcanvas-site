@@ -194,7 +194,10 @@
     "freeNewTab": " (opens in a new tab)",
     "freeCreatePrompt": "Have a picture of your own in mind?",
     "freeCreateCta": "Make your own",
-    "purchaseNote": "Checkout by Polar; applicable taxes are shown at checkout. Contact us for price-difference upgrades and Studio’s two additional seats."
+    "purchaseNote": "Checkout by Polar; applicable taxes are shown at checkout. Contact us for price-difference upgrades and Studio’s two additional seats.",
+    "freeRetouchedLabel": "Printed artwork",
+    "freeOriginalPhoto": "View the original photo",
+    "freeDownloadPending": "Coming to MakerWorld. Free download available soon."
   },
   "zh": {
     "locale": "zh",
@@ -391,6 +394,9 @@
     "freeNewTab": "（另開分頁）",
     "freeCreatePrompt": "想把自己的圖片變成洞洞板？",
     "freeCreateCta": "開始自己的設計",
-    "purchaseNote": "由 Polar 收款；稅額以結帳頁面為準。補差價升級及工作室版另外兩個席位，請聯絡我們協助。"
+    "purchaseNote": "由 Polar 收款；稅額以結帳頁面為準。補差價升級及工作室版另外兩個席位，請聯絡我們協助。",
+    "freeRetouchedLabel": "列印作品",
+    "freeOriginalPhoto": "查看原始實拍",
+    "freeDownloadPending": "MakerWorld 上架準備中，免費下載即將開放。"
   }
 }

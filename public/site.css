@@ -101,6 +101,8 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .free-design-description{color:var(--muted);font-size:17px;line-height:1.7}
 .free-design-download{margin-top:auto;max-width:100%;padding:14px 22px;gap:10px;line-height:1.4;font-size:16px}
 .free-design-download svg{flex:0 0 auto}
+.free-design-original{color:var(--cobalt);font-size:14px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.free-design-pending{padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius);color:var(--muted);font-size:15px;line-height:1.5}
 .free-designs-grid.is-single{grid-template-columns:1fr}
 .is-single .free-design{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
 .is-single .free-design-copy{padding:48px;gap:24px}
