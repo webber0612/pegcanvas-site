@@ -18,6 +18,10 @@ The product owner supplied the PegCanvas logo, an illustrated panel concept and 
 
 Hero (split-panel interaction) → feature marquee → free designs → beta campaign → room-scene tabs → slogan band → how-it-works demo (color count, panel size, 3MF plates) → specs → wall preview → plan pricing → FAQ → launch notification. Pricing and plan rights follow `docs/PRICING_PLAN.md` in the private core repository; keep both in sync.
 
+## Homepage copy
+
+The 13 October 2026 homepage copy refresh emphasizes verified conveniences: filament references (57 brands / 3,016 colors), independent 40–240 mm panel dimensions in 20 mm steps, mixed-size layouts, multi-plate exports, optional A4 panel/mounting drawings and enabled spacer models. The owner confirmed testing original IKEA SKÅDIS accessories; this does not claim every accessory is tested or imply IKEA endorsement. Other hole patterns remain under consideration, not a promised release. The approved “Why Settle for Plain? Make It Yours.” slogan is retained. Chinese section labels and sample filenames are localized. This is a presentation refresh, so no separate release note is added.
+
 ## Languages
 
 `/zh/` is fully Traditional Chinese and `/en/` is fully English. The header language links work without JavaScript. The root route uses a small script to select the saved language, then the browser language (Chinese browsers use Traditional Chinese; others use English). Explicit locale URLs always take precedence. Without JavaScript, the root provides the complete English page.

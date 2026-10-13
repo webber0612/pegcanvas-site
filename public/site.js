@@ -73,7 +73,7 @@
   pills.forEach((p) => p.addEventListener('click', () => paint(Number(p.dataset.colors))));
   paint(8);
 
-  // Panel size demo: width and height each 120-240 mm.
+  // Panel size demo: match the editor's 40-240 mm range.
   const box = document.querySelector('[data-sizebox]');
   const axes = document.querySelectorAll('input[data-axis]');
   const size = () => {

@@ -79,8 +79,8 @@
 
     <div class="marquee-band" aria-hidden="true">
       <div class="marquee">
-        <span>PNG · JPEG · SVG</span><i>●</i><span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
-        <span>PNG · JPEG · SVG</span><i>●</i><span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
+        <span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
+        <span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
       </div>
     </div>
 
@@ -139,7 +139,7 @@
       <div class="wrap stack">
         <div class="section-head">
           <div>
-            <p class="eyebrow">INSPIRATION</p>
+            <p class="eyebrow">{{inspirationEyebrow}}</p>
             <h2 id="scenes-title">{{inspTitle}}</h2>
           </div>
           <div class="tabs" role="tablist" aria-label="{{scenesLabel}}">
@@ -151,19 +151,19 @@
         </div>
         <div class="scene" role="tabpanel" id="scene-0" aria-labelledby="tab-s0">
           <div class="scene-img"><img src="/assets/entryway-concept-1440.webp" srcset="/assets/entryway-concept-720.webp 720w, /assets/entryway-concept-1440.webp 1440w" sizes="(max-width:900px) 100vw, 860px" width="1440" height="1080" decoding="async" alt="{{s0Alt}}"><span class="ai-chip">{{aiLabel}}</span></div>
-          <div class="scene-copy"><p class="scene-tag">ENTRYWAY</p><h3>{{s0Title}}</h3><p>{{s0Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
+          <div class="scene-copy"><p class="scene-tag">{{s0Tag}}</p><h3>{{s0Title}}</h3><p>{{s0Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
         </div>
         <div class="scene" role="tabpanel" id="scene-1" aria-labelledby="tab-s1" hidden>
           <div class="scene-img"><img class="pos-living" src="/assets/living-room-concept-1145.webp" srcset="/assets/living-room-concept-720.webp 720w, /assets/living-room-concept-1145.webp 1145w" sizes="(max-width:900px) 100vw, 860px" width="1145" height="1374" loading="lazy" decoding="async" alt="{{s1Alt}}"><span class="ai-chip">{{aiLabel}}</span></div>
-          <div class="scene-copy"><p class="scene-tag">LIVING ROOM</p><h3>{{s1Title}}</h3><p>{{s1Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
+          <div class="scene-copy"><p class="scene-tag">{{s1Tag}}</p><h3>{{s1Title}}</h3><p>{{s1Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
         </div>
         <div class="scene" role="tabpanel" id="scene-2" aria-labelledby="tab-s2" hidden>
           <div class="scene-img"><img src="/assets/gaming-desk-concept-1440.webp" srcset="/assets/gaming-desk-concept-720.webp 720w, /assets/gaming-desk-concept-1440.webp 1440w" sizes="(max-width:900px) 100vw, 860px" width="1440" height="810" loading="lazy" decoding="async" alt="{{s2Alt}}"><span class="ai-chip">{{aiLabel}}</span></div>
-          <div class="scene-copy"><p class="scene-tag">GAMING SETUP</p><h3>{{s2Title}}</h3><p>{{s2Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
+          <div class="scene-copy"><p class="scene-tag">{{s2Tag}}</p><h3>{{s2Title}}</h3><p>{{s2Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
         </div>
         <div class="scene" role="tabpanel" id="scene-3" aria-labelledby="tab-s3" hidden>
           <div class="scene-img"><img src="/assets/kids-room-concept-1440.webp" srcset="/assets/kids-room-concept-720.webp 720w, /assets/kids-room-concept-1440.webp 1440w" sizes="(max-width:900px) 100vw, 860px" width="1440" height="1080" loading="lazy" decoding="async" alt="{{s3Alt}}"><span class="ai-chip">{{aiLabel}}</span></div>
-          <div class="scene-copy"><p class="scene-tag">KIDS ROOM</p><h3>{{s3Title}}</h3><p>{{s3Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
+          <div class="scene-copy"><p class="scene-tag">{{s3Tag}}</p><h3>{{s3Title}}</h3><p>{{s3Body}}</p><a class="btn btn-yellow" href="https://app.pegcanvas.com/">{{tryImage}}</a></div>
         </div>
       </div>
     </section>
@@ -179,7 +179,7 @@
     <section class="section how peg-bg" id="how" aria-labelledby="how-title">
       <div class="wrap stack">
         <div>
-          <p class="eyebrow">HOW IT WORKS</p>
+          <p class="eyebrow">{{howEyebrow}}</p>
           <h2 id="how-title">{{howTitle}}</h2>
         </div>
         <div class="how-grid">
@@ -215,10 +215,10 @@
                   <p class="size-title"><strong>{{panelSize}}</strong></p>
                   <p class="size-value"><span data-size="width">200</span> <small>× <span data-size="height">160</span> mm</small></p>
                   <label class="size-axis" for="panel-width">{{panelWidth}}
-                    <input id="panel-width" type="range" min="120" max="240" step="20" value="200" data-axis="width">
+                    <input id="panel-width" type="range" min="40" max="240" step="20" value="200" data-axis="width">
                   </label>
                   <label class="size-axis" for="panel-height">{{panelHeight}}
-                    <input id="panel-height" type="range" min="120" max="240" step="20" value="160" data-axis="height">
+                    <input id="panel-height" type="range" min="40" max="240" step="20" value="160" data-axis="height">
                   </label>
                   <p class="small">{{sizeNote}}</p>
                 </div>
@@ -227,7 +227,7 @@
             <div role="tabpanel" id="how-2" aria-labelledby="tab-h2" class="demo" hidden>
               <div class="file-row">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F4B731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
-                <span class="file-meta"><strong>my-wall.3mf</strong><span>{{fileMeta}}</span></span>
+                <span class="file-meta"><strong>{{sampleFileName}}</strong><span>{{fileMeta}}</span></span>
                 <span class="file-dl">{{download}}</span>
               </div>
               <div class="plates">
@@ -247,7 +247,7 @@
       <div class="wrap stack">
         <h2 id="specs-title">{{specTitle}}</h2>
         <div class="bento-grid">
-          <div class="bento"><p class="big">5 mm</p><h3>{{sp1Title}}</h3><p>{{sp1Body}}</p></div>
+          <div class="bento"><p class="big">{{sp1Big}}</p><h3>{{sp1Title}}</h3><p>{{sp1Body}}</p></div>
           <div class="bento"><p class="big">{{sp2Big}}</p><h3>{{sp2Title}}</h3><p>{{sp2Body}}</p></div>
           <div class="bento"><p class="big">{{sp3Big}}</p><h3>{{sp3Title}}</h3><p>{{sp3Body}}</p></div>
           <div class="bento"><p class="big">{{sp4Big}}</p><h3>{{sp4Title}}</h3><p>{{sp4Body}}</p></div>
@@ -290,7 +290,7 @@
       <div class="wrap stack">
         <div class="section-head">
           <div>
-            <p class="eyebrow">PRICING</p>
+            <p class="eyebrow">{{pricingEyebrow}}</p>
             <h2 id="pricing-title">{{pricingTitle}}</h2>
             <p class="lead-sm">{{pricingCopy}}</p>
           </div>
@@ -333,6 +333,7 @@
         <div class="faq-list">
           <details open><summary>{{q1}}</summary><p>{{a1}}</p></details>
           <details><summary>{{q2}}</summary><p>{{a2}}</p></details>
+          <details><summary>{{q5}}</summary><p>{{a5}}</p></details>
           <details><summary>{{q3}}</summary><p>{{a3}}</p></details>
           <details><summary>{{q4}}</summary><p>{{a4}}</p></details>
         </div>
