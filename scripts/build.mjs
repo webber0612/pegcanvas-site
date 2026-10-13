@@ -83,23 +83,27 @@ for (const [locale, strings] of Object.entries(copy)) {
     const title = escapeHtml(localize(text.title));
     const url = item.downloadPending ? undefined : `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}${item.profileId ? `#profileId-${item.profileId}` : ''}`;
     const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
-    const imageSizes = item.sourcePreview ? '(min-width: 1200px) 540px, (min-width: 600px) 43vw, 100vw' : freeDesigns.length === 1 ? '(min-width: 860px) 620px, 100vw' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, 100vw';
+    const imageSizes = freeDesigns.length === 1 ? '(min-width: 860px) 620px, 100vw' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, 100vw';
     const printImage = `<img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${imageSizes}" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">`;
-    const visual = item.sourcePreview ? `<div class="free-design-comparison" role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
-        <figure class="free-design-step">
-          <figcaption><span aria-hidden="true">01</span> ${escapeHtml(strings.freeSourceLabel)}</figcaption>
-          <img src="/assets/${item.sourcePreview}-960.webp" srcset="/assets/${item.sourcePreview}-480.webp 480w, /assets/${item.sourcePreview}-960.webp 960w" sizes="${imageSizes}" width="${item.sourceImageSize[0]}" height="${item.sourceImageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.sourceAlt))}">
-        </figure>
-        <span class="free-design-arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
-        <figure class="free-design-step">
-          <figcaption><span aria-hidden="true">02</span> ${escapeHtml(strings.freePrintLabel)}</figcaption>
+    const visual = item.sourcePreview ? `<div class="free-design-gallery" data-work-gallery role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
+        <figure class="free-design-view" id="${item.id}-print" data-gallery-panel>
           ${printImage}
+          <figcaption>${escapeHtml(strings.freePrintLabel)}</figcaption>
         </figure>
+        <figure class="free-design-view" id="${item.id}-source" data-gallery-panel hidden>
+          <img src="/assets/${item.sourcePreview}-960.webp" srcset="/assets/${item.sourcePreview}-480.webp 480w, /assets/${item.sourcePreview}-960.webp 960w" sizes="${imageSizes}" width="${item.sourceImageSize[0]}" height="${item.sourceImageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.sourceAlt))}">
+          <figcaption>${escapeHtml(strings.freeSourceLabel)}</figcaption>
+        </figure>
+        <div class="free-design-thumbnails" data-gallery-controls hidden>
+          <button type="button" aria-controls="${item.id}-print" aria-pressed="true"><img src="/assets/${item.preview}-480.webp" width="64" height="64" loading="lazy" alt=""><span>${escapeHtml(strings.freePrintLabel)}</span></button>
+          <button type="button" aria-controls="${item.id}-source" aria-pressed="false"><img src="/assets/${item.sourcePreview}-480.webp" width="64" height="64" loading="lazy" alt=""><span>${escapeHtml(strings.freeSourceLabel)}</span></button>
+        </div>
+        <noscript><a class="free-design-source-link" href="/assets/${item.sourcePreview}-960.webp">${escapeHtml(strings.freeSourceLabel)}</a></noscript>
       </div>` : `<figure class="free-design-photo">
         ${printImage}
         <figcaption>${escapeHtml(caption)}</figcaption>
       </figure>`;
-    return `<article class="free-design${item.sourcePreview ? ' is-comparison' : ''}" aria-labelledby="work-${item.id}">
+    return `<article class="free-design" aria-labelledby="work-${item.id}">
       ${visual}
       <div class="free-design-copy">
         <div class="free-design-details">

@@ -1,7 +1,8 @@
 [
   {
     "id": "space-rocket",
-    "downloadPending": true,
+    "modelId": "3431602",
+    "modelSlug": "pegcanvas-space-rocket-10-colors",
     "colors": 10,
     "panels": 4,
     "sizeMm": [

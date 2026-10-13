@@ -110,23 +110,22 @@ h1{font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.03em;font-we
 .is-single .free-design-copy{padding:48px;gap:24px}
 .is-single .free-design-copy h3{font-size:clamp(28px,3.4vw,44px)}
 .is-single .free-design-download{margin-top:8px}
-.is-single .free-design.is-comparison{grid-template-columns:1fr}
-.free-design-comparison{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);gap:20px;align-items:center;padding:32px 32px 0}
-.free-design-step{margin:0;min-width:0;display:flex;flex-direction:column;gap:12px}
-.free-design-step img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:12px;background:var(--sand)}
-.free-design-step figcaption{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700}
-.free-design-step figcaption span{color:var(--cobalt);font-size:13px}
-.free-design-arrow{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--cobalt);color:var(--cream);margin-top:36px}
-.is-comparison .free-design-copy{flex-direction:row;align-items:center;justify-content:space-between;padding:32px;gap:32px}
-.is-comparison .free-design-details{max-width:720px;flex:1}
-.is-comparison .free-design-actions{margin-top:0;flex:0 1 300px}
-.is-single .is-comparison .free-design-copy h3{font-size:32px}
+.free-design-gallery{min-width:0;align-self:start}
+.free-design-view{position:relative;margin:0;aspect-ratio:1;background:var(--sand)}
+.free-design-view[hidden],.free-design-thumbnails[hidden]{display:none}
+.free-design-view>img{width:100%;height:100%;object-fit:contain}
+.free-design-view figcaption{position:absolute;top:16px;left:16px;background:var(--cream);color:var(--ink);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.free-design-thumbnails{display:flex;gap:12px;padding:16px 24px 24px}
+.free-design-thumbnails button{flex:1;min-width:0;display:flex;align-items:center;gap:12px;padding:8px;background:transparent;border:2px solid var(--line);border-radius:12px;font:700 14px/1.4 var(--font);color:var(--muted);text-align:left;cursor:pointer}
+.free-design-thumbnails button:hover{border-color:var(--cobalt)}
+.free-design-thumbnails button[aria-pressed="true"]{border-color:var(--cobalt);background:var(--white);color:var(--ink)}
+.free-design-thumbnails img{width:56px;height:56px;object-fit:contain;border-radius:6px;flex:0 0 auto}
+.free-design-source-link{display:inline-flex;align-items:center;min-height:44px;margin:8px 24px;color:var(--cobalt)}
 .free-designs-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:center;color:var(--muted);font-size:16px}
 .free-designs-footer a{color:var(--cobalt);font-weight:700;text-decoration-thickness:2px;text-underline-offset:5px;min-height:44px;display:inline-flex;align-items:center;gap:12px}
 @media(max-width:860px){.is-single .free-design{grid-template-columns:1fr}.is-single .free-design-copy{padding:32px}.free-designs-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}}
 @media(max-width:480px){.free-design-copy,.is-single .free-design-copy{padding:24px;gap:20px}.free-design-download{width:100%;padding:12px 16px}.free-design-photo figcaption{left:16px;bottom:16px}}
-@media(max-width:860px){.free-design-comparison{padding:24px 24px 0;gap:12px}.is-comparison .free-design-copy{flex-direction:column;align-items:stretch;padding:24px;gap:24px}.is-comparison .free-design-actions{flex:auto}.is-single .is-comparison .free-design-copy h3{font-size:28px}}
-@media(max-width:599px){.free-design-comparison{grid-template-columns:1fr;padding:20px 20px 0;gap:16px}.free-design-arrow{justify-self:center;margin-top:0;transform:rotate(90deg)}.is-comparison .free-design-copy{padding:24px 20px}.free-design-step figcaption{font-size:14px}}
+@media(max-width:480px){.free-design-thumbnails{padding:12px 16px 0;gap:8px}.free-design-thumbnails button{gap:8px;font-size:13px}.free-design-thumbnails img{width:40px;height:40px}}
 @media(max-width:1200px){.free-designs{scroll-margin-top:144px}}
 @media(max-width:760px){.nav{gap:8px;padding:8px 0}.nav-links{width:100%;gap:8px;justify-content:space-between}.nav-links>.btn{font-size:14px;padding-inline:14px}.language-links{gap:10px}.free-designs{scroll-margin-top:128px}}
 

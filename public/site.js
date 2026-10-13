@@ -1,4 +1,16 @@
 (() => {
+  // Work gallery: the print leads; thumbnails switch the full image in place.
+  document.querySelectorAll('[data-work-gallery]').forEach((gallery) => {
+    const controls = gallery.querySelector('[data-gallery-controls]');
+    const buttons = [...controls.querySelectorAll('button')];
+    const panels = [...gallery.querySelectorAll('[data-gallery-panel]')];
+    controls.hidden = false;
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+      panels.forEach((panel) => { panel.hidden = panel.id !== button.getAttribute('aria-controls'); });
+    }));
+  });
+
   // Hero: one image, four panels.
   const split = document.querySelector('[data-split]');
   const toggle = document.querySelector('[data-split-toggle]');
