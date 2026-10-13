@@ -43,6 +43,12 @@ for (const item of freeDesigns) {
   if (item.previewKind === 'retouched-photo') assert(item.originalPhoto, 'Retouched photos must link to the original.');
   for (const lang of ['zh', 'en']) for (const field of ['title', 'description', 'imageAlt']) assert(typeof item[lang]?.[field] === 'string' && item[lang][field], `Missing ${lang} ${field}.`);
   for (const width of [480, 960]) await readFile(new URL(`public/assets/${item.preview}-${width}.webp`, root));
+  if (item.sourcePreview !== undefined) {
+    assert(/^[a-z0-9-]+$/.test(item.sourcePreview), 'Invalid sourcePreview.');
+    assert(Array.isArray(item.sourceImageSize) && item.sourceImageSize.length === 2 && item.sourceImageSize.every(n => Number.isSafeInteger(n) && n > 0), 'Invalid sourceImageSize.');
+    for (const lang of ['zh', 'en']) assert(typeof item[lang]?.sourceAlt === 'string' && item[lang].sourceAlt, `Missing ${lang} sourceAlt.`);
+    for (const width of [480, 960]) await readFile(new URL(`public/assets/${item.sourcePreview}-${width}.webp`, root));
+  }
 }
 
 // Simplified Chinese is the Traditional copy put through a table (made by the
@@ -77,18 +83,35 @@ for (const [locale, strings] of Object.entries(copy)) {
     const title = escapeHtml(localize(text.title));
     const url = item.downloadPending ? undefined : `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}${item.profileId ? `#profileId-${item.profileId}` : ''}`;
     const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
-    return `<article class="free-design" aria-labelledby="work-${item.id}">
-      <figure class="free-design-photo">
-        <img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${freeDesigns.length === 1 ? '(min-width: 860px) 620px, ' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, '}100vw" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">
+    const imageSizes = item.sourcePreview ? '(min-width: 1200px) 540px, (min-width: 600px) 43vw, 100vw' : freeDesigns.length === 1 ? '(min-width: 860px) 620px, 100vw' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, 100vw';
+    const printImage = `<img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${imageSizes}" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">`;
+    const visual = item.sourcePreview ? `<div class="free-design-comparison" role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
+        <figure class="free-design-step">
+          <figcaption><span aria-hidden="true">01</span> ${escapeHtml(strings.freeSourceLabel)}</figcaption>
+          <img src="/assets/${item.sourcePreview}-960.webp" srcset="/assets/${item.sourcePreview}-480.webp 480w, /assets/${item.sourcePreview}-960.webp 960w" sizes="${imageSizes}" width="${item.sourceImageSize[0]}" height="${item.sourceImageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.sourceAlt))}">
+        </figure>
+        <span class="free-design-arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+        <figure class="free-design-step">
+          <figcaption><span aria-hidden="true">02</span> ${escapeHtml(strings.freePrintLabel)}</figcaption>
+          ${printImage}
+        </figure>
+      </div>` : `<figure class="free-design-photo">
+        ${printImage}
         <figcaption>${escapeHtml(caption)}</figcaption>
-      </figure>
+      </figure>`;
+    return `<article class="free-design${item.sourcePreview ? ' is-comparison' : ''}" aria-labelledby="work-${item.id}">
+      ${visual}
       <div class="free-design-copy">
+        <div class="free-design-details">
         <p class="eyebrow">${escapeHtml(strings.freeFileLabel)}</p>
         <h3 id="work-${item.id}">${title}</h3>
         <ul class="free-design-meta" aria-label="${escapeHtml(strings.freeSpecsLabel)}"><li>${item.colors} ${escapeHtml(strings.freeColors)}</li><li>${item.panels} ${escapeHtml(strings.freePanels)}</li><li>${item.sizeMm.join(' × ')} mm</li></ul>
         <p class="free-design-description">${escapeHtml(localize(text.description))}</p>
+        </div>
+        <div class="free-design-actions">
         ${item.originalPhoto ? `<a class="free-design-original" href="/assets/${item.originalPhoto}" target="_blank" rel="noopener noreferrer">${escapeHtml(strings.freeOriginalPhoto)}<span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>` : ''}
         ${item.downloadPending ? `<p class="free-design-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : `<a class="btn btn-primary free-design-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(strings.freeDownload)}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>`}
+        </div>
       </div>
     </article>`;
   }).join('\n');

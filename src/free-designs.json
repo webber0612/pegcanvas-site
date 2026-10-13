@@ -9,6 +9,8 @@
       400
     ],
     "preview": "space-rocket-print",
+    "sourcePreview": "space-rocket-source",
+    "sourceImageSize": [1254, 1254],
     "imageSize": [
       960,
       960
@@ -18,12 +20,14 @@
     "zh": {
       "title": "像素火箭",
       "description": "火箭升空，穿過星星與行星。四片彩色洞洞板拼成一幅太空冒險，為孩子的房間或你的工作角落添一點想像。",
-      "imageAlt": "四片實際列印的洞洞板拼成像素火箭、月亮、星星與地球"
+      "imageAlt": "四片實際列印的洞洞板拼成像素火箭、月亮、星星與地球",
+      "sourceAlt": "原始像素插畫：火箭飛過月亮、星星與行星"
     },
     "en": {
       "title": "Space Rocket",
       "description": "Blast off past stars and planets. Four colorful pegboard panels come together as a pixel-art space adventure, bringing a little imagination to a child’s room or your own creative corner.",
-      "imageAlt": "Four printed pegboard panels form a pixel-art rocket, moon, stars and Earth"
+      "imageAlt": "Four printed pegboard panels form a pixel-art rocket, moon, stars and Earth",
+      "sourceAlt": "Original pixel artwork of a rocket flying past the moon, stars and planets"
     }
   }
 ]

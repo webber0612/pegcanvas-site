@@ -196,7 +196,10 @@
     "freeCreateCta": "Make your own",
     "purchaseNote": "Checkout by Polar; applicable taxes are shown at checkout. Contact us for price-difference upgrades and Studio’s two additional seats.",
     "freeRetouchedLabel": "Printed artwork",
-    "freeOriginalPhoto": "View the original photo",
+    "freeOriginalPhoto": "View the original print photo",
+    "freeComparisonLabel": "From original artwork to printed panels",
+    "freeSourceLabel": "Original artwork",
+    "freePrintLabel": "Printed result",
     "freeDownloadPending": "Coming to MakerWorld. Free download available soon."
   },
   "zh": {
@@ -396,7 +399,10 @@
     "freeCreateCta": "開始自己的設計",
     "purchaseNote": "由 Polar 收款；稅額以結帳頁面為準。補差價升級及工作室版另外兩個席位，請聯絡我們協助。",
     "freeRetouchedLabel": "列印作品",
-    "freeOriginalPhoto": "查看原始實拍",
+    "freeOriginalPhoto": "查看成品原始實拍",
+    "freeComparisonLabel": "從原始圖片到列印成品",
+    "freeSourceLabel": "原始圖片",
+    "freePrintLabel": "列印成品",
     "freeDownloadPending": "MakerWorld 上架準備中，免費下載即將開放。"
   }
 }
