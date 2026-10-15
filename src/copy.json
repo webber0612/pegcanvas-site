@@ -214,7 +214,8 @@
     "a5": "The current staggered-slot panels have been tested with original IKEA SKÅDIS accessories. Other hole patterns are under consideration. Tell us which you would like through feature requests; released features will appear in the updates.",
     "legalEyebrow": "Legal",
     "freeChoosePlatform": "Choose where to download for free",
-    "freeDownloadCults": "Download free on Cults3D"
+    "freeDownloadCults": "Download free on Cults3D",
+    "freeNewLabel": "Just added"
   },
   "zh": {
     "locale": "zh",
@@ -431,6 +432,7 @@
     "a5": "現有交錯長孔板型已用 IKEA SKÅDIS 原廠配件試掛。其他孔型仍待評估，你可以透過功能許願告訴我們想用哪一種；開放的新功能會列在更新紀錄。",
     "legalEyebrow": "法律聲明",
     "freeChoosePlatform": "選擇平台，免費下載",
-    "freeDownloadCults": "到 Cults3D 免費下載"
+    "freeDownloadCults": "到 Cults3D 免費下載",
+    "freeNewLabel": "最新上架"
   }
 }

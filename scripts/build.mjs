@@ -79,7 +79,10 @@ copy['zh-cn'] = {
 };
 for (const [locale, strings] of Object.entries(copy)) {
   const localize = value => locale === 'zh-cn' ? simplify(value) : value;
-  strings.freeDesignCards = freeDesigns.map(item => {
+  strings.freeDesignCards = freeDesigns.map((item, index) => {
+    // With one card left over in rows of three, the newest leads as a wide card
+    const featured = index === 0 && freeDesigns.length % 3 === 1;
+    const wide = item.imageSize[0] / item.imageSize[1] > 1.2;
     const text = item[locale === 'en' ? 'en' : 'zh'];
     const title = escapeHtml(localize(text.title));
     const url = item.downloadPending ? undefined : `https://makerworld.com/${locale === 'en' ? 'en' : 'zh'}/models/${item.modelId}-${item.modelSlug}${item.profileId ? `#profileId-${item.profileId}` : ''}`;
@@ -91,9 +94,9 @@ for (const [locale, strings] of Object.entries(copy)) {
           ${downloadLinks.map((link, at) => `<a class="btn ${at ? 'btn-ghost' : 'btn-primary'} work-download" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label + strings.freeNewTab)}"><span>${link.name}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>`).join('')}
         </div>` : '';
     const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
-    const imageSizes = '(min-width: 1100px) 400px, (min-width: 700px) 45vw, 100vw';
+    const imageSizes = featured ? '(min-width: 1100px) 700px, (min-width: 700px) 45vw, 100vw' : '(min-width: 1100px) 400px, (min-width: 700px) 45vw, 100vw';
     const image = (name, size, alt) => `<img src="/assets/${name}-960.webp" srcset="/assets/${name}-480.webp 480w, /assets/${name}-960.webp 960w" sizes="${imageSizes}" width="${size[0]}" height="${size[1]}" loading="lazy" decoding="async" alt="${escapeHtml(alt)}">`;
-    const visual = item.sourcePreview ? `<div class="work-visual" data-work-gallery role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
+    const visual = item.sourcePreview ? `<div class="work-visual${wide ? ' is-wide' : ''}" data-work-gallery role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
         <figure class="work-view" id="${item.id}-print" data-gallery-panel>
           ${image(item.preview, item.imageSize, localize(text.imageAlt))}
           <figcaption class="visually-hidden">${escapeHtml(strings.freePrintLabel)}</figcaption>
@@ -113,9 +116,10 @@ for (const [locale, strings] of Object.entries(copy)) {
           <figcaption class="visually-hidden">${escapeHtml(caption)}</figcaption>
         </figure>
       </div>`;
-    return `<article class="work" aria-labelledby="work-${item.id}">
+    return `<article class="work${featured ? ' is-featured' : ''}" aria-labelledby="work-${item.id}">
       ${visual}
       <div class="work-body">
+        ${featured ? `<p class="work-badge">${escapeHtml(strings.freeNewLabel)}</p>` : ''}
         <h3 id="work-${item.id}">${title}</h3>
         <ul class="work-meta" aria-label="${escapeHtml(strings.freeSpecsLabel)}"><li>${item.colors} ${escapeHtml(strings.freeColors)}</li><li>${item.panels} ${escapeHtml(strings.freePanels)}</li><li>${item.sizeMm.map(n => n / 10).join(' × ')} cm</li></ul>
         <p class="work-description">${escapeHtml(localize(text.description))}</p>
@@ -127,7 +131,7 @@ for (const [locale, strings] of Object.entries(copy)) {
       </div>
     </article>`;
   }).join('\n').replace(/^[ \t]+$/gm, '');
-  strings.freeGridClass = `has-${Math.min(freeDesigns.length, 3)}`;
+  strings.freeGridClass = `has-${Math.min(freeDesigns.length, 3)}${freeDesigns.length % 3 === 1 && freeDesigns.length > 1 ? ' has-featured' : ''}`;
 }
 for (const [source, folder] of pages) {
   const template = await readFile(new URL(source, root), 'utf8');
