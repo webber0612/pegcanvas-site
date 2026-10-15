@@ -1,5 +1,41 @@
 [
   {
+    "id": "crimson-mech-knight",
+    "modelId": "3442887",
+    "modelSlug": "pegcanvas-crimson-mech-knight-8-colors",
+    "profileId": "3926321",
+    "cultsPath": "home/pegcanvas-crimson-mech-knight-8-colors",
+    "colors": 8,
+    "panels": 6,
+    "sizeMm": [
+      600,
+      400
+    ],
+    "preview": "crimson-mech-knight-print",
+    "sourcePreview": "crimson-mech-knight-source",
+    "sourceImageSize": [
+      960,
+      720
+    ],
+    "imageSize": [
+      960,
+      960
+    ],
+    "previewKind": "photo",
+    "zh": {
+      "title": "紅蓮機甲騎士",
+      "description": "披著烈焰紅披風的機甲騎士。六片洞洞板拼成 60 × 40 公分的大幅牆面，氣勢十足，也照樣掛得住日常小物。",
+      "imageAlt": "六片八色實際列印洞洞板拼成機甲騎士頭部、紅色披風與「紅蓮」字樣",
+      "sourceAlt": "原始機甲騎士插畫，紅色披風與「紅蓮」書法字"
+    },
+    "en": {
+      "title": "Crimson Mech Knight",
+      "description": "A mech knight wrapped in a burning crimson cape. Six panels form a bold 600 × 400 mm wall that still holds your everyday gear.",
+      "imageAlt": "Six eight-color printed pegboard panels forming a mech knight's head, a red cape and Chinese calligraphy",
+      "sourceAlt": "Original mech knight illustration with a red cape and Chinese calligraphy"
+    }
+  },
+  {
     "id": "golden-falcon",
     "modelId": "3440998",
     "modelSlug": "pegcanvas-golden-falcon-2-colors",
