@@ -1,7 +1,10 @@
 [
   {
     "id": "golden-falcon",
-    "downloadPending": true,
+    "modelId": "3440998",
+    "modelSlug": "pegcanvas-golden-falcon-2-colors",
+    "profileId": "3923943",
+    "cultsPath": "home/pegcanvas-golden-falcon-2-colors",
     "colors": 2,
     "panels": 4,
     "sizeMm": [
@@ -34,7 +37,10 @@
   },
   {
     "id": "mountain-lake-sunset",
-    "downloadPending": true,
+    "modelId": "3440999",
+    "modelSlug": "pegcanvas-mountain-lake-sunset-6-colors",
+    "profileId": "3923944",
+    "cultsPath": "home/pegcanvas-mountain-lake-sunset-6-colors",
     "colors": 6,
     "panels": 4,
     "sizeMm": [

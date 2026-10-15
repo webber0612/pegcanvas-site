@@ -87,48 +87,47 @@ for (const [locale, strings] of Object.entries(copy)) {
       ...(url ? [{ name: 'MakerWorld', url, label: strings.freeDownload }] : []),
       ...(item.cultsPath ? [{ name: 'Cults3D', url: `https://cults3d.com/en/3d-model/${item.cultsPath}`, label: strings.freeDownloadCults }] : []),
     ];
-    const downloads = downloadLinks.length ? `<div class="free-design-downloads" role="group" aria-label="${escapeHtml(strings.freeChoosePlatform)}">
-      <p class="free-design-download-label">${escapeHtml(strings.freeChoosePlatform)}</p>
-      <div class="free-design-download-links">${downloadLinks.map(link => `<a class="btn btn-ghost free-design-download" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label + strings.freeNewTab)}"><span>${link.name}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>`).join('')}</div>
-    </div>` : '';
+    const downloads = downloadLinks.length ? `<div class="work-downloads" role="group" aria-label="${escapeHtml(strings.freeChoosePlatform)}">
+          ${downloadLinks.map((link, at) => `<a class="btn ${at ? 'btn-ghost' : 'btn-primary'} work-download" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label + strings.freeNewTab)}"><span>${link.name}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>`).join('')}
+        </div>` : '';
     const caption = strings[{ photo: 'freePhotoLabel', 'retouched-photo': 'freeRetouchedLabel', render: 'freeRenderLabel', ai: 'freeAiLabel' }[item.previewKind]];
-    const imageSizes = freeDesigns.length === 1 ? '(min-width: 860px) 620px, 100vw' : '(min-width: 1100px) 400px, (min-width: 760px) 50vw, 100vw';
-    const printImage = `<img src="/assets/${item.preview}-960.webp" srcset="/assets/${item.preview}-480.webp 480w, /assets/${item.preview}-960.webp 960w" sizes="${imageSizes}" width="${item.imageSize[0]}" height="${item.imageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.imageAlt))}">`;
-    const visual = item.sourcePreview ? `<div class="free-design-gallery" data-work-gallery role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
-        <figure class="free-design-view" id="${item.id}-print" data-gallery-panel>
-          ${printImage}
-          <figcaption>${escapeHtml(strings.freePrintLabel)}</figcaption>
+    const imageSizes = '(min-width: 1100px) 400px, (min-width: 700px) 45vw, 100vw';
+    const image = (name, size, alt) => `<img src="/assets/${name}-960.webp" srcset="/assets/${name}-480.webp 480w, /assets/${name}-960.webp 960w" sizes="${imageSizes}" width="${size[0]}" height="${size[1]}" loading="lazy" decoding="async" alt="${escapeHtml(alt)}">`;
+    const visual = item.sourcePreview ? `<div class="work-visual" data-work-gallery role="group" aria-label="${escapeHtml(strings.freeComparisonLabel)}">
+        <figure class="work-view" id="${item.id}-print" data-gallery-panel>
+          ${image(item.preview, item.imageSize, localize(text.imageAlt))}
+          <figcaption class="visually-hidden">${escapeHtml(strings.freePrintLabel)}</figcaption>
         </figure>
-        <figure class="free-design-view" id="${item.id}-source" data-gallery-panel hidden>
-          <img src="/assets/${item.sourcePreview}-960.webp" srcset="/assets/${item.sourcePreview}-480.webp 480w, /assets/${item.sourcePreview}-960.webp 960w" sizes="${imageSizes}" width="${item.sourceImageSize[0]}" height="${item.sourceImageSize[1]}" loading="lazy" decoding="async" alt="${escapeHtml(localize(text.sourceAlt))}">
-          <figcaption>${escapeHtml(strings.freeSourceLabel)}</figcaption>
+        <figure class="work-view is-source" id="${item.id}-source" data-gallery-panel hidden>
+          ${image(item.sourcePreview, item.sourceImageSize, localize(text.sourceAlt))}
+          <figcaption class="visually-hidden">${escapeHtml(strings.freeSourceLabel)}</figcaption>
         </figure>
-        <div class="free-design-thumbnails" data-gallery-controls hidden>
-          <button type="button" aria-controls="${item.id}-print" aria-pressed="true"><img src="/assets/${item.preview}-480.webp" width="64" height="64" loading="lazy" alt=""><span>${escapeHtml(strings.freePrintLabel)}</span></button>
-          <button type="button" aria-controls="${item.id}-source" aria-pressed="false"><img src="/assets/${item.sourcePreview}-480.webp" width="64" height="64" loading="lazy" alt=""><span>${escapeHtml(strings.freeSourceLabel)}</span></button>
+        <div class="work-switch" data-gallery-controls hidden>
+          <button type="button" aria-controls="${item.id}-print" aria-pressed="true">${escapeHtml(strings.freePrintLabel)}</button>
+          <button type="button" aria-controls="${item.id}-source" aria-pressed="false">${escapeHtml(strings.freeSourceLabel)}</button>
         </div>
-        <noscript><a class="free-design-source-link" href="/assets/${item.sourcePreview}-960.webp">${escapeHtml(strings.freeSourceLabel)}</a></noscript>
-      </div>` : `<figure class="free-design-photo">
-        ${printImage}
-        <figcaption>${escapeHtml(caption)}</figcaption>
-      </figure>`;
-    return `<article class="free-design" aria-labelledby="work-${item.id}">
+        <noscript><a class="work-source-link" href="/assets/${item.sourcePreview}-960.webp">${escapeHtml(strings.freeSourceLabel)}</a></noscript>
+      </div>` : `<div class="work-visual">
+        <figure class="work-view">
+          ${image(item.preview, item.imageSize, localize(text.imageAlt))}
+          <figcaption class="visually-hidden">${escapeHtml(caption)}</figcaption>
+        </figure>
+      </div>`;
+    return `<article class="work" aria-labelledby="work-${item.id}">
       ${visual}
-      <div class="free-design-copy">
-        <div class="free-design-details">
-        <p class="eyebrow">${escapeHtml(strings.freeFileLabel)}</p>
+      <div class="work-body">
         <h3 id="work-${item.id}">${title}</h3>
-        <ul class="free-design-meta" aria-label="${escapeHtml(strings.freeSpecsLabel)}"><li>${item.colors} ${escapeHtml(strings.freeColors)}</li><li>${item.panels} ${escapeHtml(strings.freePanels)}</li><li>${item.sizeMm.join(' × ')} mm</li></ul>
-        <p class="free-design-description">${escapeHtml(localize(text.description))}</p>
-        </div>
-        <div class="free-design-actions">
-        ${item.originalPhoto ? `<a class="free-design-original" href="/assets/${item.originalPhoto}" target="_blank" rel="noopener noreferrer">${escapeHtml(strings.freeOriginalPhoto)}<span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>` : ''}
-        ${downloads}${item.downloadPending ? `\n        <p class="free-design-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : ''}
+        <ul class="work-meta" aria-label="${escapeHtml(strings.freeSpecsLabel)}"><li>${item.colors} ${escapeHtml(strings.freeColors)}</li><li>${item.panels} ${escapeHtml(strings.freePanels)}</li><li>${item.sizeMm.map(n => n / 10).join(' × ')} cm</li></ul>
+        <p class="work-description">${escapeHtml(localize(text.description))}</p>
+        ${item.originalPhoto ? `<a class="work-original" href="/assets/${item.originalPhoto}" target="_blank" rel="noopener noreferrer">${escapeHtml(strings.freeOriginalPhoto)}<span class="visually-hidden">${escapeHtml(strings.freeNewTab)}</span></a>` : ''}
+        <div class="work-footer">
+          <p class="work-free">${escapeHtml(strings.freeFileLabel)}</p>
+          ${downloads}${item.downloadPending ? `<p class="work-pending">${escapeHtml(strings.freeDownloadPending)}</p>` : ''}
         </div>
       </div>
     </article>`;
   }).join('\n').replace(/^[ \t]+$/gm, '');
-  strings.freeGridClass = freeDesigns.length === 1 ? 'is-single' : '';
+  strings.freeGridClass = `has-${Math.min(freeDesigns.length, 3)}`;
 }
 for (const [source, folder] of pages) {
   const template = await readFile(new URL(source, root), 'utf8');
