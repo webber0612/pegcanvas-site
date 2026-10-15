@@ -1,5 +1,71 @@
 [
   {
+    "id": "golden-falcon",
+    "downloadPending": true,
+    "colors": 2,
+    "panels": 4,
+    "sizeMm": [
+      400,
+      400
+    ],
+    "preview": "golden-falcon-print",
+    "sourcePreview": "golden-falcon-source",
+    "sourceImageSize": [
+      1254,
+      1254
+    ],
+    "imageSize": [
+      960,
+      960
+    ],
+    "previewKind": "photo",
+    "zh": {
+      "title": "金鷹利刃",
+      "description": "黑底與金色勾出俐落的鷹影，四片洞洞板拼成一面醒目的桌邊裝飾，也能掛上日常小物。",
+      "imageAlt": "四片黑金雙色實際列印洞洞板拼成鷹形圖案與 FALCON 字樣",
+      "sourceAlt": "原始黑金鷹形圖案與 FALCON 字樣"
+    },
+    "en": {
+      "title": "Golden Falcon",
+      "description": "A sharp gold falcon against black. Four printed panels form a bold backdrop for your desk, with room to hang everyday essentials.",
+      "imageAlt": "Four black and gold printed pegboard panels forming a falcon graphic and FALCON lettering",
+      "sourceAlt": "Original gold falcon graphic and FALCON lettering on black"
+    }
+  },
+  {
+    "id": "mountain-lake-sunset",
+    "downloadPending": true,
+    "colors": 6,
+    "panels": 4,
+    "sizeMm": [
+      400,
+      400
+    ],
+    "preview": "mountain-lake-sunset-print",
+    "sourcePreview": "mountain-lake-sunset-source",
+    "sourceImageSize": [
+      1254,
+      1254
+    ],
+    "imageSize": [
+      960,
+      960
+    ],
+    "previewKind": "photo",
+    "zh": {
+      "title": "山湖夕陽",
+      "description": "夕陽、山稜與湖面倒影，將戶外風景帶到你的工作角落。六種耗材、四片洞洞板，拼成一幅可以收納的風景。",
+      "imageAlt": "四片六色實際列印洞洞板拼成夕陽山峰森林與湖面倒影",
+      "sourceAlt": "原始山湖夕陽插畫，包含橘色太陽、山峰、森林與湖面倒影"
+    },
+    "en": {
+      "title": "Mountain Lake Sunset",
+      "description": "Bring a little of the outdoors to your desk. Six filament colors and four printed panels turn a mountain sunset into a place for everyday essentials.",
+      "imageAlt": "Four six-color printed pegboard panels forming a sunset above mountains, pine trees and lake reflections",
+      "sourceAlt": "Original mountain lake sunset illustration with a striped orange sun, peaks, pine trees and reflections"
+    }
+  },
+  {
     "id": "space-rocket",
     "modelId": "3431602",
     "modelSlug": "pegcanvas-space-rocket-10-colors",
@@ -12,7 +78,10 @@
     ],
     "preview": "space-rocket-print",
     "sourcePreview": "space-rocket-source",
-    "sourceImageSize": [1254, 1254],
+    "sourceImageSize": [
+      1254,
+      1254
+    ],
     "imageSize": [
       960,
       960

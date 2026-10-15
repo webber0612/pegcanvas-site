@@ -127,7 +127,7 @@ for (const [locale, strings] of Object.entries(copy)) {
         </div>
       </div>
     </article>`;
-  }).join('\n');
+  }).join('\n').replace(/^[ \t]+$/gm, '');
   strings.freeGridClass = freeDesigns.length === 1 ? 'is-single' : '';
 }
 for (const [source, folder] of pages) {
