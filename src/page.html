@@ -26,9 +26,7 @@
 <body>
   <a class="skip" href="#main">{{skip}}</a>
 
-  <p class="beta-bar"><span>{{betaBar}}</span> <a href="#beta">{{betaBarLink}} →</a></p>
-
-  <header class="topbar">
+<header class="topbar">
     <nav class="wrap nav" aria-label="{{navigation}}">
       <a class="brand" href="/{{locale}}/" aria-label="{{home}}">
         <img src="/assets/art-panel-concept-480.webp" width="40" height="40" alt="">
@@ -50,7 +48,7 @@
     <section class="hero peg-bg" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <a class="badge" href="#beta"><span>{{newTag}}</span>{{heroBadge}}</a>
+          <span class="badge">{{heroBadge}}</span>
           <h1>{{heroH1}}</h1>
           <p class="lead">{{heroCopy}}</p>
           <div class="actions">
@@ -98,44 +96,7 @@
       </div>
     </section>
 
-    <section class="section beta" id="beta" aria-labelledby="beta-title">
-      <div class="wrap">
-        <div class="blast">
-          <div class="blast-main">
-            <p class="blast-kicker">{{betaEyebrow}}</p>
-            <h2 id="beta-title">{{betaTitle}}</h2>
-            <p class="blast-prize"><b>50</b><span>{{betaPrize}}</span></p>
-            <p class="blast-body">{{betaBody}}</p>
-            <div class="beta-actions">
-              <a class="btn blast-cta" href="https://app.pegcanvas.com/">{{betaCta}} →</a>
-              <a class="btn blast-ghost" href="/{{locale}}/faq/#support" data-pegcanvas-chat>{{betaFeedback}}</a>
-            </div>
-          </div>
-          <ol class="blast-how">
-            <li><span>1</span>{{betaHow1}}</li>
-            <li><span>2</span>{{betaHow2}}</li>
-            <li><span>3</span>{{betaHow3}}</li>
-          </ol>
-        </div>
-        <div class="tasks">
-          <div class="tasks-head">
-            <h3>{{betaTasksTitle}}</h3>
-            <p>{{betaTasksNote}}</p>
-          </div>
-          <ul class="tasks-list">
-            <li><b>+5</b><div><strong>{{betaTask1Title}}</strong><p>{{betaTask1Body}}</p></div></li>
-            <li><b>+1</b><div><strong>{{betaTask2Title}}</strong><p>{{betaTask2Body}}</p></div></li>
-            <li><b>+1</b><div><strong>{{betaTask3Title}}</strong><p>{{betaTask3Body}}</p></div></li>
-          </ul>
-        </div>
-        <div class="beta-rules">
-          <h3>{{betaRulesTitle}}</h3>
-          <ol>{{betaRulesList}}</ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="scenes" aria-labelledby="scenes-title">
+<section class="section" id="scenes" aria-labelledby="scenes-title">
       <div class="wrap stack">
         <div class="section-head">
           <div>
