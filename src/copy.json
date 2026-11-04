@@ -215,10 +215,10 @@
     "cfDetailAlt": "Close-up of the moon on the pegboard, where yellow and orange filaments interleave into a gradient",
     "cfArtworkAlt": "Van Gogh's The Starry Night, original image",
     "cfStarryCaption": "The Starry Night full-color pegboard · 7 color filaments + 1 clear · four 20 × 20 cm panels, 40 × 40 cm assembled · actual photo",
-    "cfShrineTitle": "Seaside Shrine",
+    "cfShrineTitle": "Sunset Shrine",
     "cfShrineMeta": "Flat print from Color Fusion Studio · 7 color filaments + 1 clear · 24 × 18 cm",
-    "cfShrineArtworkAlt": "Seaside Shrine original artwork: cherry blossoms, a torii gate, stone steps and a sunset harbor",
-    "cfShrinePrintAlt": "Photo of the printed Seaside Shrine",
+    "cfShrineArtworkAlt": "Sunset Shrine original artwork: cherry blossoms, a torii gate, stone steps and a sunset harbor",
+    "cfShrinePrintAlt": "Photo of the printed Sunset Shrine",
     "cfStudioLink": "Print a full-color picture with Studio"
   },
   "zh": {
@@ -437,10 +437,10 @@
     "cfDetailAlt": "洞洞板上月亮的近拍，黃色和橘色的耗材交錯疊出漸層",
     "cfArtworkAlt": "梵谷《星空》原圖",
     "cfStarryCaption": "梵谷《星空》全彩洞洞板 · 7 色耗材＋1 卷透明 · 4 片 20 × 20 cm 拼成 40 × 40 cm · 實拍照片",
-    "cfShrineTitle": "海濱神社",
+    "cfShrineTitle": "櫻花神社夕景",
     "cfShrineMeta": "Color Fusion Studio 平面作品 · 7 色耗材＋1 卷透明 · 24 × 18 cm",
-    "cfShrineArtworkAlt": "海濱神社原圖：櫻花、鳥居、石階和夕陽海港",
-    "cfShrinePrintAlt": "海濱神社的實際列印成品照片",
+    "cfShrineArtworkAlt": "櫻花神社夕景原圖：櫻花、鳥居、石階和夕陽海港",
+    "cfShrinePrintAlt": "櫻花神社夕景的實際列印成品照片",
     "cfStudioLink": "用 Studio 印一張全彩畫"
   }
 }
