@@ -77,8 +77,13 @@ copy['zh-cn'] = {
     [key, simplify(value).replaceAll('"/zh/', '"/zh-cn/')])),
   locale: 'zh-cn', htmlLang: 'zh-Hans', zhCurrent: '', zhCnCurrent: copy.zh.zhCurrent,
 };
+// Turn on when full-colour pegboards are released in the editor (PegCanvas + Color Fusion).
+const COLOR_FUSION_IN_EDITOR = false;
 for (const [locale, strings] of Object.entries(copy)) {
   const localize = value => locale === 'zh-cn' ? simplify(value) : value;
+  strings.cfEditorAction = COLOR_FUSION_IN_EDITOR
+    ? `<a class="btn btn-ghost" href="https://app.pegcanvas.com/">${escapeHtml(strings.cfEditorCta)}</a>`
+    : `<span class="cf-soon">${escapeHtml(strings.cfEditorSoon)}</span>`;
   strings.freeDesignCards = freeDesigns.map((item, index) => {
     // With one card left over in rows of three, the newest leads as a wide card
     const featured = index === 0 && freeDesigns.length % 3 === 1;

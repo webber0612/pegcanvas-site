@@ -33,6 +33,7 @@
         <span>Peg<span class="brand-accent">Canvas</span></span>
       </a>
       <div class="nav-links">
+        <a class="navlink" href="#color-fusion">{{navCf}}</a>
         <a class="navlink" href="#free-downloads">{{freeNav}}</a>
         <a class="navlink" href="#scenes">{{navInspiration}}</a>
         <a class="navlink" href="#how">{{navHow}}</a>
@@ -81,6 +82,61 @@
         <span>{{mq1}}</span><i>●</i><span>{{mq2}}</span><i>●</i><span>{{mq3}}</span><i>●</i><span>{{mq4}}</span><i>●</i>
       </div>
     </div>
+
+    <section class="section cf-showcase" id="color-fusion" aria-labelledby="cf-title">
+      <div class="wrap cf-grid">
+        <div class="cf-copy">
+          <p class="eyebrow">{{cfEyebrow}}</p>
+          <h2 id="cf-title">{{cfTitle}}</h2>
+          <p class="lead-sm">{{cfIntro}}</p>
+          <ul class="checks cf-points">
+            <li>{{cfPoint1}}</li>
+            <li>{{cfPoint2}}</li>
+            <li>{{cfPoint3}}</li>
+            <li>{{cfPoint4}}</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://colorfusion.pegcanvas.com/" target="_blank" rel="noopener">{{cfStudioCta}}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span class="visually-hidden">{{freeNewTab}}</span></a>
+            {{cfEditorAction}}
+          </div>
+          <p class="small">{{cfStudioNote}}</p>
+        </div>
+        <div class="cf-visual">
+          <div class="cf-gallery" data-work-gallery role="group" aria-label="{{cfGalleryLabel}}">
+            <figure class="cf-view" id="cf-starry-wall" data-gallery-panel>
+              <img src="/assets/cf-starry-wall-960.webp" srcset="/assets/cf-starry-wall-480.webp 480w, /assets/cf-starry-wall-960.webp 960w" sizes="(min-width: 1100px) 600px, 100vw" width="960" height="960" loading="lazy" decoding="async" alt="{{cfWallAlt}}">
+            </figure>
+            <figure class="cf-view" id="cf-starry-detail" data-gallery-panel hidden>
+              <img src="/assets/cf-starry-detail-960.webp" srcset="/assets/cf-starry-detail-480.webp 480w, /assets/cf-starry-detail-960.webp 960w" sizes="(min-width: 1100px) 600px, 100vw" width="960" height="960" loading="lazy" decoding="async" alt="{{cfDetailAlt}}">
+            </figure>
+            <figure class="cf-view" id="cf-starry-artwork" data-gallery-panel hidden>
+              <img src="/assets/cf-starry-artwork-960.webp" srcset="/assets/cf-starry-artwork-480.webp 480w, /assets/cf-starry-artwork-960.webp 960w" sizes="(min-width: 1100px) 600px, 100vw" width="960" height="960" loading="lazy" decoding="async" alt="{{cfArtworkAlt}}">
+            </figure>
+            <div class="work-switch cf-switch" data-gallery-controls hidden>
+              <button type="button" aria-controls="cf-starry-wall" aria-pressed="true">{{cfViewWall}}</button>
+              <button type="button" aria-controls="cf-starry-detail" aria-pressed="false">{{cfViewDetail}}</button>
+              <button type="button" aria-controls="cf-starry-artwork" aria-pressed="false">{{cfViewArtwork}}</button>
+            </div>
+          </div>
+          <p class="cf-caption">{{cfStarryCaption}}</p>
+        </div>
+      </div>
+      <div class="wrap cf-studio">
+        <a class="cf-studio-card" href="https://colorfusion.pegcanvas.com/" target="_blank" rel="noopener">
+          <span class="cf-pair">
+            <img src="/assets/cf-shrine-artwork-480.webp" width="480" height="360" loading="lazy" decoding="async" alt="{{cfShrineArtworkAlt}}">
+            <span class="cf-arrow" aria-hidden="true">→</span>
+            <img src="/assets/cf-shrine-print-480.webp" width="480" height="360" loading="lazy" decoding="async" alt="{{cfShrinePrintAlt}}">
+          </span>
+          <span class="cf-studio-text">
+            <strong>{{cfShrineTitle}}</strong>
+            <span>{{cfShrineMeta}}</span>
+            <span class="cf-studio-link">{{cfStudioLink}} <span aria-hidden="true">→</span><span class="visually-hidden">{{freeNewTab}}</span></span>
+          </span>
+        </a>
+      </div>
+    </section>
 
     <section class="section free-designs works" id="free-downloads" aria-labelledby="free-title">
       <div class="wrap stack">

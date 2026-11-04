@@ -379,3 +379,27 @@ a.badge:hover{box-shadow:0 6px 18px rgba(19,33,63,.14)}
 .updates-page .update h3{margin:24px 0 10px;font-size:15px;letter-spacing:1px;color:var(--cobalt)}
 .updates-page .update ul{margin:0;padding-left:22px;display:grid;gap:10px;font-size:17px;line-height:1.7}
 .updates-page .update li strong{color:var(--ink)}
+
+/* Color Fusion showcase */
+.cf-showcase{background:linear-gradient(180deg,var(--cream),var(--sand));overflow:hidden}
+.cf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.cf-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.cf-copy h2{background:linear-gradient(90deg,#1932B3,#2457C5 35%,#D99A0E 75%,#E2603A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cf-points{flex-direction:column;gap:10px;font-size:16px}
+.cf-soon{font-weight:700;font-size:15px;color:var(--muted);align-self:center}
+.cf-visual{min-width:0;display:flex;flex-direction:column;gap:12px}
+.cf-gallery{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(19,33,63,.22);background:var(--ink);aspect-ratio:1/1}
+.cf-view{margin:0;height:100%}
+.cf-view[hidden]{display:none}
+.cf-view img{width:100%;height:100%;object-fit:cover}
+.cf-caption{font-size:14px;color:var(--muted)}
+.cf-studio{margin-top:40px}
+.cf-studio-card{display:flex;align-items:center;gap:28px;padding:20px;border-radius:24px;background:var(--white);text-decoration:none;box-shadow:0 8px 24px rgba(19,33,63,.08);transition:transform .2s ease,box-shadow .2s ease}
+.cf-studio-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(19,33,63,.14)}
+.cf-pair{display:flex;align-items:center;gap:10px;flex:0 1 460px;min-width:0}
+.cf-pair img{flex:1 1 0;min-width:0;height:auto;border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+.cf-arrow{font-weight:800;font-size:22px;color:var(--cobalt)}
+.cf-studio-text{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:15px;color:var(--muted)}
+.cf-studio-text strong{font-size:20px;color:var(--ink)}
+.cf-studio-link{font-weight:700;color:var(--cobalt)}
+@media(max-width:900px){.cf-grid{grid-template-columns:minmax(0,1fr);gap:36px}.cf-studio-card{flex-direction:column;align-items:stretch}.cf-pair{flex-basis:auto}}
