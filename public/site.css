@@ -384,6 +384,13 @@ a.badge:hover{box-shadow:0 6px 18px rgba(19,33,63,.14)}
 .cf-showcase{background:linear-gradient(180deg,var(--cream),var(--sand));overflow:hidden}
 .cf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
 .cf-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.cf-brand{display:flex;align-items:center;gap:14px}
+.cf-brand img{width:56px;height:56px;flex:none}
+.hero-cf{display:flex;align-items:center;gap:12px;margin-top:20px;padding:10px 16px 10px 10px;max-width:max-content;border-radius:18px;background:rgba(255,255,255,.85);box-shadow:0 6px 18px rgba(19,33,63,.10);color:var(--ink);text-decoration:none;font-size:15px;line-height:1.4;transition:transform .2s ease,box-shadow .2s ease}
+.hero-cf:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(19,33,63,.16)}
+.hero-cf img{width:48px;height:48px;flex:none}
+.hero-cf span{display:flex;flex-direction:column}
+.hero-cf strong{background:linear-gradient(90deg,#1932B3,#2457C5 35%,#D99A0E 75%,#E2603A);-webkit-background-clip:text;background-clip:text;color:transparent}
 .cf-copy h2{background:linear-gradient(90deg,#1932B3,#2457C5 35%,#D99A0E 75%,#E2603A);-webkit-background-clip:text;background-clip:text;color:transparent}
 .cf-points{flex-direction:column;gap:10px;font-size:16px}
 .cf-soon{font-weight:700;font-size:15px;color:var(--muted);align-self:center}

@@ -62,6 +62,10 @@
             <li>{{check2}}</li>
             <li>{{check3}}</li>
           </ul>
+          <a class="hero-cf" href="#color-fusion">
+            <img src="/assets/cf-logo-96.webp" srcset="/assets/cf-logo-96.webp 1x, /assets/cf-logo-192.webp 2x" width="48" height="48" alt="">
+            <span><strong>{{heroCfTitle}}</strong>{{heroCfLine}}</span>
+          </a>
           <p class="latest"><a href="/{{locale}}/updates/">{{latestUpdate}} →</a></p>
         </div>
         <div class="hero-visual">
@@ -86,7 +90,10 @@
     <section class="section cf-showcase" id="color-fusion" aria-labelledby="cf-title">
       <div class="wrap cf-grid">
         <div class="cf-copy">
-          <p class="eyebrow">{{cfEyebrow}}</p>
+          <div class="cf-brand">
+            <img src="/assets/cf-logo-96.webp" srcset="/assets/cf-logo-96.webp 1x, /assets/cf-logo-192.webp 2x" width="56" height="56" alt="{{cfLogoAlt}}">
+            <p class="eyebrow">{{cfEyebrow}}</p>
+          </div>
           <h2 id="cf-title">{{cfTitle}}</h2>
           <p class="lead-sm">{{cfIntro}}</p>
           <ul class="checks cf-points">
