@@ -78,7 +78,7 @@ copy['zh-cn'] = {
   locale: 'zh-cn', htmlLang: 'zh-Hans', zhCurrent: '', zhCnCurrent: copy.zh.zhCurrent,
 };
 // Turn on when full-colour pegboards are released in the editor (PegCanvas + Color Fusion).
-const COLOR_FUSION_IN_EDITOR = false;
+const COLOR_FUSION_IN_EDITOR = true;
 for (const [locale, strings] of Object.entries(copy)) {
   const localize = value => locale === 'zh-cn' ? simplify(value) : value;
   strings.cfEditorAction = COLOR_FUSION_IN_EDITOR
